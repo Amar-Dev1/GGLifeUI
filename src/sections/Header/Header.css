@@ -1,0 +1,90 @@
+#header {
+    background-color: rgba(255, 255, 255, .5);
+    backdrop-filter: blur(7px);
+    border-radius: 35px;
+}
+
+
+#header .bar-wrapper {
+    cursor: pointer;
+    display: none;
+}
+
+#header .bar-wrapper img {
+    width: 20px;
+}
+
+
+.narrow-nav {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: 70%;
+    transform: translate(-50%, -60%);
+    background-color: rgba(255, 255, 255, .5);
+    backdrop-filter: blur(7px);
+    border-radius: 40px;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        transform 0.4s ease-in-out,
+        opacity 0.4s ease-in-out,
+        visibility 0s 0.4s;
+}
+
+.narrow-nav.active {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    visibility: visible;
+    transition:
+        transform 0.4s ease-in-out,
+        opacity 0.4s ease-in-out,
+        visibility 0s;
+}
+
+.about-link {
+    cursor: pointer;
+    position: relative;
+}
+
+.about-links {
+    position: absolute;
+    left: 50%;
+    width: 210px;
+    transform: translateX(-50%);
+    background-color: rgba(230, 230, 230, 0.5);
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    transition: transform .4s ease-in-out, opacity .4s ease-in-out, visibility .4s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+}
+.about-link a{
+    transition: .3s ;
+}
+.about-link a:hover {
+    margin-left: 10px;
+}
+
+.about-link:hover .about-links {
+    opacity: 1;
+    visibility: visible;
+    z-index: 999 !important;
+}
+
+
+.about-link:hover .about-links {
+    visibility: visible !important;
+}
+
+@media (max-width:991px) {
+    #header .bar-wrapper {
+        display: block;
+    }
+
+    #header .wide-nav,
+    #header .sub-wide-nav {
+        display: none !important;
+    }
+}

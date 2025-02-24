@@ -1,0 +1,19 @@
+#how {
+    padding-top: 75px;
+    padding-bottom: 75px;
+}
+
+#how .step-2,
+#how .step-3 {
+    height: 100%;
+}
+
+@media (min-width:768px) {
+    #how .step-2 {
+        flex-direction: column;
+    }
+
+    #how .step-3 {
+        flex-direction: column;
+    }
+}

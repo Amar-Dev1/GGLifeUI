@@ -1,0 +1,21 @@
+#features {
+    background-color: #eee;
+    padding-top: 75px;
+    padding-bottom: 75px;
+}
+
+.feature {
+    border-radius: 15px;
+    cursor: pointer;
+    transition: .3s;
+    width: 90%;
+}
+
+.feature:hover {
+    width: 100%;
+    transform: scale(1.01);
+}
+
+.feature img {
+    width: 45px;
+}
