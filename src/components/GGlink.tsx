@@ -9,7 +9,7 @@ export interface GGLinkProps {
     takeTo?: string;
 }
 
-const GGLink: React.FC<GGLinkProps> = ({ title, color, backgroundColor, padding, margin, takeTo }) => {
+const GGLink: React.FC<GGLinkProps> = ({ title, color, backgroundColor, padding, margin }) => {
 
     return (
         <a id='gg-link' href='#' style={{ color: color, backgroundColor: backgroundColor, padding: padding, margin: margin }}>{title}</a>
