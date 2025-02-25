@@ -4,7 +4,6 @@
     border-radius: 35px;
 }
 
-
 #header .bar-wrapper {
     cursor: pointer;
     display: none;
@@ -13,7 +12,6 @@
 #header .bar-wrapper img {
     width: 20px;
 }
-
 
 .narrow-nav {
     position: fixed;
@@ -60,9 +58,11 @@
     opacity: 0;
     visibility: hidden;
 }
-.about-link a{
-    transition: .3s ;
+
+.about-link a {
+    transition: .3s;
 }
+
 .about-link a:hover {
     margin-left: 10px;
 }

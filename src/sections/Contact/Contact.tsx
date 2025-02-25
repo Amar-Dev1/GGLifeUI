@@ -2,34 +2,28 @@ import React from 'react'
 import './Contact.css';
 import MainTitle from '../../components/MainTitle';
 
-import contactImg from '../../assets/contact.jpg'
-
 const Contact: React.FC = () => {
     return (
-        <div id='contact' className=''>
-            <h3>this section still in progress!</h3>
-            <div className="roww row w-100 d-flex justify-content-center align-items-center">
-                <div className="form-col col-md-6 py-4">
-                    <form action="" className='d-flex justify-content-center align-items-center flex-column px-4 py-5'>
-                        <MainTitle head='Contact us' headColor='white' headSize='38px' />
-                        <div className="input-group">
-                            <input type="text" name='name' placeholder='Your Name' />
-                            <input type="email" name='email' placeholder='Email' />
+        <>
+            <div id='contact' className='bg-dark text-light '>
+                <div className="container d-flex flex-column justify-content-center align-items-center">
+                    <MainTitle head='Contact us' />
+                    <form action="" className="form w-70 d-flex flex-column justify-content-center align-items-center my-3">
+                        <div className="input-group my-2">
+                            <input type="text" name="name" id="" className='mx-1 my-1 rounded px-5 py-2' placeholder='Your Name' />
+                            <input type="email" name="" id="" className='mx-1 my-1 rounded px-5 py-2' required placeholder='Your Email' />
                         </div>
                         <div className="input-group">
-                            <textarea name='message' className='w-100 my-2'></textarea>
+                            <textarea name="" id="" className="w-100 mx-1 rounded px-5 py-3" required placeholder='Say Hello 👋' />
                         </div>
-                        <button type="submit" className='btn btn-dark bg-white text-dark py-2 px-4 my-4'>Send</button>
+                        <button type='submit' className='btn bg-light text-dark fw-bold my-3'>Send !</button>
                     </form>
                 </div>
-                <div className="col-md-6 img-col d-flex justify-content-end align-items-center">
-                    <div className="img-wrapper d-flex justify-content-center align-items-center">
-                        <img src={contactImg} alt="" className='w-100' />
-                    </div>
-                </div>
             </div>
-        </div>
+            <div id="footer" className='bg-dark py-4 d-flex justify-content-center align-items-center shadow'>
+                <p>Copyright © 2025 GGLife. All rights reserved</p>
+            </div>
+        </>
     )
 }
-
 export default Contact;

@@ -4,16 +4,11 @@ import barIcon from '../../assets/bar-icon.png';
 import arrowDown from '../../assets/arrow-down.png';
 import { GGlink } from '../../../index';
 
-
-
 const Header: React.FC = () => {
-
     const [isClicked, setIsClicked] = useState<boolean>(false);
-
     const handleBar = () => {
         setIsClicked(!isClicked);
     }
-
     return (
         <>
             <div id='header' className='container d-flex justify-content-between align-items-center p-3 mx-auto'>
@@ -42,23 +37,21 @@ const Header: React.FC = () => {
             </div>
             <div className={`narrow-nav text-center d-flex flex-column justify-content-center ${isClicked ? 'active' : ''}`}>
                 <a className='py-3 text-dark' onClick={handleBar} href="/">Home</a>
-                
+
                 <div className='about-link py-3 text-dark'>
-                        about
-                        <img src={arrowDown} alt="" style={{ width: '10px', marginLeft: '3px' }} />
-                        <div className='about-links d-flex flex-column py-3 px-5  shadow'>
-                            <a href="#about" className='text-dark'onClick={handleBar}>About GGLife</a><hr />
-                            <a href="#showcase" className='text-dark'onClick={handleBar}>Why GGLife ?</a>
-                        </div>
+                    about
+                    <img src={arrowDown} alt="" style={{ width: '10px', marginLeft: '3px' }} />
+                    <div className='about-links d-flex flex-column py-3 px-5  shadow'>
+                        <a href="#about" className='text-dark' onClick={handleBar}>About GGLife</a><hr />
+                        <a href="#showcase" className='text-dark' onClick={handleBar}>Why GGLife ?</a>
                     </div>
+                </div>
                 {/* <a className='py-3 text-dark' onClick={handleBar} href="#">dashboard</a> */}
                 <a className='py-3 text-dark' onClick={handleBar} href="#how">How it works</a>
                 <a href="#" className='py-3 text-dark' onClick={handleBar}>Get Started</a>
                 <a href="#" className='px-4 bg-dark py-2 text-light rounded' onClick={handleBar}>Login</a>
             </div>
-
         </>
     )
 }
-
 export default Header;

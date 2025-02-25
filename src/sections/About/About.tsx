@@ -6,16 +6,16 @@ import aboutVid from '../../assets//about-video.mp4';
 const About: React.FC = () => {
     return (
         <div id='about'>
-            <MainTitle head='About GGLife' bio='lormelasdkjfa0dsf asdfa sdfasdfl;kjalsdfo' headColor='black' headSize='38px' />
+            <MainTitle head='About GGLife' bio='A brief information about us' headColor='black' headSize='38px' />
             <div className="container">
                 <div className="row d-flex align-items-center justify-content-between ">
                     <div className="col-md-6">
-                        <p>At GGLife, we believe in pushing boundaries and creating extraordinary experiences. Founded with a vision to revolutionize the industry, we've grown into a dynamic force that combines innovation with human-centered design.</p>
+                        <p>At GGLife, we empower individuals to take charge of their personal growth through intentional, structured living. Our platform is designed to simplify daily productivity, foster meaningful habits, and provide clarity in tracking progress—helping you turn aspirations into achievements.</p>
                         <br />
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, adipisci reprehenderit alias voluptatum ut quis quod laboriosam, dicta dolor exercitationem nobis rerum laborum nemo. Totam esse repellat deleniti nisi neque!</p>
+                        <p>Founded on the belief that growth thrives in simplicity, GGLife combines intuitive design with actionable tools. We’re committed to revolutionizing self-improvement by prioritizing user-centric innovation, enabling you to organize tasks, capture ideas, and build consistency—one step at a time.</p>
                     </div>
                     <div className="col-md-6 text-center">
-                        <video className='about-vid' src={aboutVid} loop={true} muted={true} autoPlay={true}>
+                        <video className='about-vid' src={aboutVid} loop={true} muted={true} autoPlay={true} preload='none'>
                         </video>
                     </div>
                 </div>
@@ -23,5 +23,4 @@ const About: React.FC = () => {
         </div>
     )
 }
-
-export default About
+export default About;

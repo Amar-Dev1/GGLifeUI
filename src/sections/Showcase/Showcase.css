@@ -1,11 +1,11 @@
-#showcase{
+#showcase {
     padding-top: 75px;
-    padding-bottom:  75px;
+    padding-bottom: 75px;
 }
 
 @media (max-width:768px) {
 
-    .phone-adjust{
+    .phone-adjust {
         text-align: center;
     }
 }

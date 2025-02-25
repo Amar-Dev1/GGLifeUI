@@ -24,7 +24,7 @@ const Step: React.FC<StepProps> = ({ title, description, img, className, btn }) 
                 }
             </div>
             <div className='img-wrapper p-4'>
-                <img src={img} alt="" className='w-100' />
+                <img src={img} alt="" className='w-100' loading='lazy'/>
             </div>
         </div>
     )

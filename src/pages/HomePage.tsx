@@ -10,13 +10,12 @@ const HomePage: React.FC = () => {
             <div className="hero py-4">
                 <Header />
                 <Landing />
+            </div>
                 <Features />
                 <About />
                 <How />
                 <Showcase />
-
                 <Contact />
-            </div>
         </>
     )
 }
