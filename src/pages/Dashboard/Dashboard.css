@@ -1,0 +1,29 @@
+#dashboard {
+    position: relative;
+}
+
+#dashboard .sidebar {
+    background-color: white !important;
+    min-width: 230px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    padding-left: 20px;
+    padding-right: 5px;
+    overflow-y: auto;
+    max-height: 100vh;
+}
+
+#dashboard .sidebar::-webkit-scrollbar {
+    width: 3px;
+}
+
+#dashboard .sidebar .head-wrapper {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 10;
+    padding: 20px;
+    width: calc(100% + 20px);
+    margin-left: -20px;
+}

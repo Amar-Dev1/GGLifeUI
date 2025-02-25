@@ -7,6 +7,7 @@ interface MainTitle {
     bio?: string;
     headColor?: string;
     headSize?:string;
+    
 }
 
 const MainTitle: React.FC<MainTitle> = ({ head, bio, headColor: color,headSize:fontSize }) => {

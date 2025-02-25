@@ -1,0 +1,51 @@
+/* components */
+#dashboard .item {
+    transition: .3s;
+    opacity: .8;
+}
+
+#dashboard .item {
+    color: black;
+}
+
+#dashboard .item .title,
+#dashboard .item .icon {
+    opacity: .6;
+}
+
+#dashboard .item:hover {
+    background-color: #eee;
+}
+
+#dashboard .item.active {
+    background-color: #111;
+    opacity: 1;
+}
+
+#dashboard .item.active .title,
+#dashboard .item.active .icon {
+    color: white;
+    opacity: 1;
+    filter: brightness(0) invert(1);
+}
+
+#dashboard .cat {
+    padding-left: 4px;
+}
+
+#dashboard .cat-title {
+    position: relative;
+    opacity: .5;
+}
+
+#dashboard .cat-title::before {
+    content: '';
+    width: 20px;
+    height: 1px;
+    background-color: #999;
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -26px;
+}
