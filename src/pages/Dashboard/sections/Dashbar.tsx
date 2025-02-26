@@ -5,7 +5,7 @@ import barIcon from '../../../assets/bar-icon.png';
 import testImg from '../../../assets/contact.jpg';
 
 import sumImg from '../../../assets/dashboard/sun.svg';
-import moonImg from '../../../assets/dashboard//moon.svg';
+// import moonImg from '../../../assets/dashboard//moon.svg';
 
 export interface DashbarProps {
     isClicked?: boolean;

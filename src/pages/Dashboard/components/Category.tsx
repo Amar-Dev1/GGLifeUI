@@ -1,8 +1,6 @@
 import './styles.css';
 import { ItemProps } from './Item';
 import { Item } from '../../../../index';
-import { SidebarProps } from '../sections/Sidebar';
-
 
 interface CatProps {
     catTitle: string;
