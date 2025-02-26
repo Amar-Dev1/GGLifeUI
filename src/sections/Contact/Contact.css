@@ -7,7 +7,7 @@
     background-position: 0 0;
     background-size: cover;
     background-attachment: fixed;
-    animation: moveBackground 20s linear infinite;
+    animation: moveBackground 25s linear infinite;
 }
 
 #contact form {
@@ -49,11 +49,6 @@
     opacity: .7;
 }
 
-@media (max-width:768px) {
-    #contact form input {
-        width: 100%;
-    }
-}
 
 @keyframes moveBackground {
     from {
@@ -62,5 +57,17 @@
 
     to {
         background-position: 0 100%;
+    }
+}
+
+@media (max-width:768px) {
+    #contact form input {
+        width: 100%;
+    }
+
+    #contact {
+        background-size: contain;
+        animation: moveBackground 35s linear infinite;
+        
     }
 }

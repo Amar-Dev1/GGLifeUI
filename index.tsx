@@ -22,5 +22,5 @@ export { default as Item } from './src/pages/Dashboard/components/Item';
 // Dashboard sections
 export { default as Sidebar } from './src/pages/Dashboard/sections/Sidebar';
 export { default as Dashbar } from './src/pages/Dashboard/sections/Dashbar';
-export { default as MainContent } from './src/pages/Dashboard/sections/MainContent';
+export { default as Content } from './src/pages/Dashboard/sections/Content';
 

@@ -8,12 +8,23 @@ import notesImg from '../../../assets/dashboard/notes.svg';
 import habbitsImg from '../../../assets/dashboard/habits.svg';
 import logoutImg from '../../../assets/dashboard/logout.svg';
 
-const Sidebar: React.FC = () => {
-    const [activeItem, setActiveItem] = useState<string | null>(null)
+export interface SidebarProps {
+    isClicked?: boolean;
+    setIsClicked: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ isClicked=false, setIsClicked }) => {
+
+    const [activeItem, setActiveItem] = useState<string | null>(null);
+
     return (
-        <div id='sidebar' className="sidebar shadow position-fixed rounded">
+        <div className={`sidebar shadow rounded ${isClicked ? 'open' : ''}`}>
             <div className='head-wrapper '>
                 <MainTitle head='⚡ GGLife' headSize='28px' />
+                {
+                    isClicked &&
+                    <button className="close-btn p-2 fw-bold" onClick={() => setIsClicked(false)}>✖</button>
+                }
             </div>
             <div className="cats my-5">
                 <Category
@@ -22,16 +33,19 @@ const Sidebar: React.FC = () => {
                         {
                             title: 'All Tasks',
                             icon: tasksImg,
+                            route:'/dashboard/no'
+                            
                         },
                         {
                             title: 'Create a Task',
                             icon: taskImg,
                         }
-
+                        
                     ]
-
-                    }
-                    activeItem={activeItem} setActiveItem={setActiveItem}
+                    
+                }
+                
+                activeItem={activeItem} setActiveItem={setActiveItem}
                 />
                 <Category
                     catTitle='Notes'
@@ -71,6 +85,7 @@ const Sidebar: React.FC = () => {
                 />
             </div>
         </div>
+
     )
 }
 

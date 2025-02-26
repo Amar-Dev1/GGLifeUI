@@ -1,17 +1,17 @@
 import './styles.css';
 import { ItemProps } from './Item';
 import { Item } from '../../../../index';
+import { SidebarProps } from '../sections/Sidebar';
 
 
-interface catProps {
+interface CatProps {
     catTitle: string;
     items: ItemProps[];
     activeItem: string | null;
     setActiveItem: (title: string) => void;
 }
 
-const Category: React.FC<catProps> = ({ catTitle, items, activeItem, setActiveItem }) => {
-
+const Category: React.FC<CatProps> = ({ catTitle, items, activeItem, setActiveItem}) => {
 
     return (
         <div className='cat my-4'>
@@ -23,7 +23,9 @@ const Category: React.FC<catProps> = ({ catTitle, items, activeItem, setActiveIt
                         key={index}
                         {...item}
                         isActive={activeItem === itemKey}
-                        onClick={() => setActiveItem(itemKey)}
+                        onClick={() => {
+                            setActiveItem(itemKey);
+                        }}
                     />
                 );
             })}

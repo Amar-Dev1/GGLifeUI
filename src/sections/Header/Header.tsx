@@ -25,7 +25,7 @@ const Header: React.FC = () => {
                         </div>
                     </div>
                     <a className='px-4 py-2 mx-1 text-dark' href="#how">How it works</a>
-                    <a className='px-4 py-2 mx-1 text-dark' href="#contact">Contact</a>
+                    <a className='px-4 py-2 mx-1 text-dark' href="#contact">Contact us</a>
                 </div>
                 <div className='sub-wide-nav'>
                     <a href="#" className='px-4 mx-2 py-2 text-dark'>Get Started</a>
@@ -48,6 +48,7 @@ const Header: React.FC = () => {
                 </div>
                 {/* <a className='py-3 text-dark' onClick={handleBar} href="#">dashboard</a> */}
                 <a className='py-3 text-dark' onClick={handleBar} href="#how">How it works</a>
+                <a className='py-3 text-dark' onClick={handleBar} href="#contact">Contact us</a>
                 <a href="#" className='py-3 text-dark' onClick={handleBar}>Get Started</a>
                 <a href="#" className='px-4 bg-dark py-2 text-light rounded' onClick={handleBar}>Login</a>
             </div>

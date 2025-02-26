@@ -1,11 +1,47 @@
 import React from 'react';
+import '../Dashboard.css';
 
-const Dashbar: React.FC = () => {
+import barIcon from '../../../assets/bar-icon.png';
+import testImg from '../../../assets/contact.jpg';
+
+import sumImg from '../../../assets/dashboard/sun.svg';
+import moonImg from '../../../assets/dashboard//moon.svg';
+
+export interface DashbarProps {
+    isClicked?: boolean;
+    setIsClicked: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Dashbar: React.FC<DashbarProps> = ({ isClicked, setIsClicked }) => {
+    const handleClick = () => setIsClicked(!isClicked)
     return (
-        <div id='dashbar' className=''>
-
+        <div className={`dashbar bg-light shadow p-3 my-3 rounded d-flex align-items-center justify-content-around`}>
+            <div className="bar-wrapper" onClick={handleClick}>
+                <img src={barIcon} alt="" loading='lazy' width={'20px'} className='bar-icon' />
+            </div>
+            <div className="theme-wrapper mx-3">
+                <img src={sumImg} alt="" width={'25px'} />
+                {/* <img src={moonImg} alt="" width={'25px'} /> */}
+            </div>
+            <div className='profile-wrapper'>
+                <img src={testImg} alt="" className='w-100' loading='lazy' />
+                <div className="details d-flex flex-column justify-content-center p-3 rounded">
+                    <div className="user d-flex  align-items-center mb-1">
+                        <div className="user-img d-flex justify-content-center align-items-center">
+                            <img src={testImg} alt="" loading='lazy' className='w-100' />
+                        </div>
+                        <div className="user-name">
+                            <p className='m-0 fw-bold'>SomeOne</p>
+                            <p className='m-0 text-muted'>user</p>
+                        </div>
+                    </div><hr className='m-0' />
+                    <div className="options"></div><br />
+                    <div className="logout"></div>
+                </div>
+            </div>
+            <div>
+            </div>
         </div>
     )
 }
-
 export default Dashbar;
