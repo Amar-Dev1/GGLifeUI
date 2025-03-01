@@ -1,6 +1,6 @@
-import './styles.css';
+import '../Layout.css';
 import { ItemProps } from './Item';
-import { Item } from '../../../../index';
+import { Item } from '../../../..';
 
 interface CatProps {
     catTitle: string;
@@ -9,7 +9,7 @@ interface CatProps {
     setActiveItem: (title: string) => void;
 }
 
-const Category: React.FC<CatProps> = ({ catTitle, items, activeItem, setActiveItem}) => {
+const Category: React.FC<CatProps> = ({ catTitle, items, activeItem, setActiveItem }) => {
 
     return (
         <div className='cat my-4'>

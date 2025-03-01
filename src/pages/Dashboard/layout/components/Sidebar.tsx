@@ -1,25 +1,28 @@
 import React, { useState } from 'react'
-import '../Dashboard.css';
+import '../Layout.css';
 import { MainTitle, Category } from '../../../../index';
-import taskImg from '../../../assets/dashboard/task.svg';
-import tasksImg from '../../../assets/dashboard/tasks.svg';
-import notImg from '../../../assets/dashboard/note.svg';
-import notesImg from '../../../assets/dashboard/notes.svg';
-import habbitsImg from '../../../assets/dashboard/habits.svg';
-import logoutImg from '../../../assets/dashboard/logout.svg';
+import taskImg from '../../../../assets/dashboard/task.svg';
+import tasksImg from '../../../../assets/dashboard/tasks.svg';
+import notImg from '../../../../assets/dashboard/note.svg';
+import notesImg from '../../../../assets/dashboard/notes.svg';
+import habbitsImg from '../../../../assets/dashboard/habits.svg';
+import logoutImg from '../../../../assets/dashboard/logout.svg';
+import { useTheme } from '../../../../components/ThemeProvider';
 
 export interface SidebarProps {
     isClicked?: boolean;
     setIsClicked: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ isClicked=false, setIsClicked }) => {
+const Sidebar: React.FC<SidebarProps> = ({ isClicked = false, setIsClicked }) => {
+
+    const { theme } = useTheme()
 
     const [activeItem, setActiveItem] = useState<string | null>(null);
 
     return (
-        <div className={`sidebar shadow rounded ${isClicked ? 'open' : ''}`}>
-            <div className='head-wrapper '>
+        <div className={`sidebar shadow rounded ${isClicked ? 'open' : ''} ${theme}`}>
+            <div className={`head-wrapper`}>
                 <MainTitle head='⚡ GGLife' headSize='28px' />
                 {
                     isClicked &&
@@ -33,19 +36,19 @@ const Sidebar: React.FC<SidebarProps> = ({ isClicked=false, setIsClicked }) => {
                         {
                             title: 'All Tasks',
                             icon: tasksImg,
-                            route:'/dashboard/no'
-                            
+                            route: '/dashboard/no'
+
                         },
                         {
                             title: 'Create a Task',
                             icon: taskImg,
                         }
-                        
+
                     ]
-                    
-                }
-                
-                activeItem={activeItem} setActiveItem={setActiveItem}
+
+                    }
+
+                    activeItem={activeItem} setActiveItem={setActiveItem}
                 />
                 <Category
                     catTitle='Notes'

@@ -1,6 +1,6 @@
 import React from 'react'
 import './Landing.css';
-import { GGlink } from '../../../index';
+import { GGlink } from '../..';
 const Landing: React.FC = () => {
   return (
     <>

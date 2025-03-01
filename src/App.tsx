@@ -1,5 +1,5 @@
 import './App.css';
-import { Dashboard, GoUp, HomePage } from '../index';
+import { Dashboard, GoUp, HomePage, ThemeProvider } from './index';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
@@ -17,17 +17,19 @@ function App() {
   }
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<HomePage />} />
-          <Route path='/dashboard' element={<Dashboard />} />
-        </Routes>
-        {
-          showBtn && (
-            <GoUp onclick={handleGoUp} status={showBtn} />
-          )
-        }
-      </BrowserRouter>
+      <ThemeProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<HomePage />} />
+            <Route path='/dashboard' element={<Dashboard />} />
+          </Routes>
+          {
+            showBtn && (
+              <GoUp onclick={handleGoUp} status={showBtn} />
+            )
+          }
+        </BrowserRouter>
+      </ThemeProvider>
     </>
   )
 }

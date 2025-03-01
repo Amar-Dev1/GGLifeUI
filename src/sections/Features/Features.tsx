@@ -1,11 +1,7 @@
 import React from 'react';
 import './Features.css';
-import noteIcon from '../../assets/note.png';
-import taskIcon from '../../assets/task.png';
-import habitIcon from '../../assets/habit.png';
-import trackIcon from '../../assets/tracking.png';
 import { FeatureProps } from '../../components/Feature';
-import { MainTitle, Feature } from '../../../index'
+import { MainTitle, Feature, noteIcon, taskIcon, habitIcon, trackIcon } from '../../index'
 
 const Features: React.FC = () => {
     const allFeatures: FeatureProps[] = [

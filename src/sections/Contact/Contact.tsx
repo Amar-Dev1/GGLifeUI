@@ -1,6 +1,6 @@
 import React from 'react'
 import './Contact.css';
-import MainTitle from '../../components/MainTitle';
+import {MainTitle} from '../..';
 
 const Contact: React.FC = () => {
     return (

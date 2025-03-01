@@ -1,11 +1,6 @@
 import React from 'react';
-
 import './How.css';
-
-import MainTitle from '../../components/MainTitle';
-import Step from '../../components/Step';
-import signupImg from '../../assets/signup.png';
-import dashboardImg from '../../assets/dashboard.png';
+import { MainTitle, Step, signupImg, dashboardImg } from '../..';
 
 const How: React.FC = () => {
     return (

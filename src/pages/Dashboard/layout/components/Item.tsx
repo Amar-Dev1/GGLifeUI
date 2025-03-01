@@ -1,5 +1,4 @@
-import './styles.css';
-
+import '../Layout.css';
 import { Link } from 'react-router-dom';
 
 export interface ItemProps {

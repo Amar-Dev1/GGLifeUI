@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import './Header.css';
-import barIcon from '../../assets/bar-icon.png';
-import arrowDown from '../../assets/arrow-down.png';
-import { GGlink } from '../../../index';
+import { barIcon,arrowDown,GGlink } from '../..';
 
 const Header: React.FC = () => {
     const [isClicked, setIsClicked] = useState<boolean>(false);
@@ -15,7 +13,6 @@ const Header: React.FC = () => {
                 <div><a href="/" className='logo fw-bold text-dark fs-2'>GGLife</a></div>
                 <div className='wide-nav d-flex'>
                     <a className='px-4 py-2 mx-1 text-dark' href="/">Home</a>
-                    {/* <a className='px-4 py-2 mx-1 text-dark' href="#">dashboard</a> */}
                     <div className='about-link px-4 py-2 mx-1 text-dark'>
                         about
                         <img src={arrowDown} alt="" style={{ width: '10px', marginLeft: '10px' }} />
@@ -46,7 +43,6 @@ const Header: React.FC = () => {
                         <a href="#showcase" className='text-dark' onClick={handleBar}>Why GGLife ?</a>
                     </div>
                 </div>
-                {/* <a className='py-3 text-dark' onClick={handleBar} href="#">dashboard</a> */}
                 <a className='py-3 text-dark' onClick={handleBar} href="#how">How it works</a>
                 <a className='py-3 text-dark' onClick={handleBar} href="#contact">Contact us</a>
                 <a href="#" className='py-3 text-dark' onClick={handleBar}>Get Started</a>

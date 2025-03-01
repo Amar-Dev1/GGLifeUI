@@ -1,7 +1,6 @@
-import { GGlink } from '../../../index';
 import './Showcase.css';
-import showcaseImg from '../../assets/dashboard.png';
-import React from 'react'
+import { showcaseImg,GGlink } from '../..';
+import React from 'react';
 const Showcase: React.FC = () => {
     return (
         <div id='showcase' className='container'>

@@ -1,7 +1,6 @@
 import React from 'react'
 import './About.css';
-import MainTitle from '../../components/MainTitle'
-import aboutVid from '../../assets//about-video.mp4';
+import { MainTitle, aboutVid } from '../..';
 
 const About: React.FC = () => {
     return (
