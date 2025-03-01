@@ -9,7 +9,7 @@ const Layout: React.FC = () => {
     return (
         <div id='dashboard' className={`${theme}`}>
             <Sidebar isClicked={isSidebarOpen} setIsClicked={setIsSidebarOpen} />
-            <div className="main-content">
+            <div className="main-content px-4 py-2">
                 <Dashbar isClicked={isSidebarOpen} setIsClicked={setIsSidebarOpen} />
                 <Content />
             </div>
