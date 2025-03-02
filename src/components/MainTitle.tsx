@@ -1,5 +1,3 @@
-// gloabal component
-
 import React from 'react'
 
 interface MainTitle {
@@ -7,14 +5,15 @@ interface MainTitle {
     bio?: string;
     headColor?: string;
     headSize?:string;
+    headClassname?:string;
     
 }
 
-const MainTitle: React.FC<MainTitle> = ({ head, bio, headColor: color,headSize:fontSize }) => {
+const MainTitle: React.FC<MainTitle> = ({ head, bio, headColor: color,headSize:fontSize,headClassname }) => {
     return (
-        <div className='main-title text-center d-flex justify-content-center align-items-center flex-column'>
+        <div className={`main-title text-center d-flex justify-content-center align-items-center flex-column ${headClassname}`}>
             <h2 style={{ color, fontSize}} className='fw-bold'>{head}</h2>
-            <p className='' style={{fontSize:'16px', opacity:'.6',width:'60%'}}>{bio}</p>
+            <p style={{fontSize:'16px', opacity:'.6',width:'60%'}}>{bio}</p>
         </div>
     )
 }

@@ -4,8 +4,10 @@
 }
 
 @media (max-width:768px) {
-
     .phone-adjust {
         text-align: center;
+    }
+    #showcase .img-col{
+        margin-top: 25px;
     }
 }

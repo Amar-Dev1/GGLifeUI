@@ -15,6 +15,7 @@
 @media (max-width:768px) {
     #step {
         flex-wrap: wrap;
+        text-align: center !important;
     }
 
     #step .text-wrapper {

@@ -1,12 +1,6 @@
 import React, { useState } from 'react'
 import '../Layout.css';
-import { MainTitle, Category } from '../../../../index';
-import taskImg from '../../../../assets/dashboard/task.svg';
-import tasksImg from '../../../../assets/dashboard/tasks.svg';
-import notImg from '../../../../assets/dashboard/note.svg';
-import notesImg from '../../../../assets/dashboard/notes.svg';
-import habbitsImg from '../../../../assets/dashboard/habits.svg';
-import logoutImg from '../../../../assets/dashboard/logout.svg';
+import { MainTitle, Category, gglifeLogo, taskImg, notImg, notesImg, habbitsImg, logoutImg, tasksImg } from '../../../../index';
 import { useTheme } from '../../../../components/ThemeProvider';
 
 export interface SidebarProps {
@@ -22,8 +16,9 @@ const Sidebar: React.FC<SidebarProps> = ({ isClicked = false, setIsClicked }) =>
 
     return (
         <div className={`sidebar shadow rounded ${isClicked ? 'open' : ''} ${theme}`}>
-            <div className={`head-wrapper`}>
-                <MainTitle head='⚡ GGLife' headSize='28px' />
+            <div className={`head-wrapper d-flex justify-content-center align-items-center`}>
+                <img src={gglifeLogo} alt="" width={'29px'} style={{ marginBottom: 'auto',marginRight:'5px' }} />
+                <MainTitle head='GGLife' headSize='28px' />
                 {
                     isClicked &&
                     <button className="close-btn p-2 fw-bold" onClick={() => setIsClicked(false)}>✖</button>
@@ -36,18 +31,13 @@ const Sidebar: React.FC<SidebarProps> = ({ isClicked = false, setIsClicked }) =>
                         {
                             title: 'All Tasks',
                             icon: tasksImg,
-                            route: '/dashboard/no'
-
                         },
                         {
                             title: 'Create a Task',
                             icon: taskImg,
                         }
-
                     ]
-
                     }
-
                     activeItem={activeItem} setActiveItem={setActiveItem}
                 />
                 <Category

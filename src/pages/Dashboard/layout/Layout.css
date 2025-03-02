@@ -113,7 +113,7 @@
 
 #dashboard .dashbar .user-form-popup {
     width: 60%;
-    height: 70%;
+    min-height: 70%;
     z-index: 99;
     top: 50%;
     left: 50%;

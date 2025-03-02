@@ -18,7 +18,7 @@ const Features: React.FC = () => {
                     <div className="row py-4 mt-5">
                         {
                             allFeatures.map(item => (
-                                <div className="col-md-6 my-2" key={item.id}>
+                                <div className="col-md-6 my-2 d-flex justify-content-center align-items-center" key={item.id}>
                                     <Feature title={item.title} icon={item.icon} description={item.description} />
                                 </div>
                             ))

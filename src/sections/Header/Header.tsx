@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Header.css';
-import { barIcon,arrowDown,GGlink } from '../..';
+import { barIcon, arrowDown, GGlink, gglifeLogo } from '../..';
+import { Link } from 'react-router-dom';
 
 const Header: React.FC = () => {
     const [isClicked, setIsClicked] = useState<boolean>(false);
@@ -10,7 +11,7 @@ const Header: React.FC = () => {
     return (
         <>
             <div id='header' className='container d-flex justify-content-between align-items-center p-3 mx-auto'>
-                <div><a href="/" className='logo fw-bold text-dark fs-2'>GGLife</a></div>
+                <Link to={'/'} className='d-flex justify-content-around align-items-center'><img src={gglifeLogo} alt="" width={'26px'}/><span className='logo fw-bold fs-2 mx-2'>GGLife</span></Link>
                 <div className='wide-nav d-flex'>
                     <a className='px-4 py-2 mx-1 text-dark' href="/">Home</a>
                     <div className='about-link px-4 py-2 mx-1 text-dark'>
@@ -25,8 +26,8 @@ const Header: React.FC = () => {
                     <a className='px-4 py-2 mx-1 text-dark' href="#contact">Contact us</a>
                 </div>
                 <div className='sub-wide-nav'>
-                    <a href="#" className='px-4 mx-2 py-2 text-dark'>Get Started</a>
-                    <GGlink title='Login' color='white' backgroundColor='black' padding='10px 20px' />
+                    <a href="/signup" className='px-4 mx-2 py-2 text-dark'>Get Started</a>
+                    <GGlink title='Login' className='px-2 px-3 bg-dark text-light' takeTo={'/login'}/>
                 </div>
                 <div className='bar-wrapper' onClick={handleBar}>
                     <img src={barIcon} alt="" />
@@ -45,7 +46,7 @@ const Header: React.FC = () => {
                 </div>
                 <a className='py-3 text-dark' onClick={handleBar} href="#how">How it works</a>
                 <a className='py-3 text-dark' onClick={handleBar} href="#contact">Contact us</a>
-                <a href="#" className='py-3 text-dark' onClick={handleBar}>Get Started</a>
+                <a href="/signup" className='py-3 text-dark' onClick={handleBar}>Get Started</a>
                 <a href="#" className='px-4 bg-dark py-2 text-light rounded' onClick={handleBar}>Login</a>
             </div>
         </>

@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import '../Layout.css';
 import { barIcon, testImg, userImg, logoutImg, sunImg, moonImg, MainTitle, editImg } from '../../../..';
 import { useTheme } from '../../../../components/ThemeProvider';
+import { Link } from 'react-router-dom';
 
 export interface DashbarProps {
     isClicked?: boolean;
@@ -29,7 +30,6 @@ const Dashbar: React.FC<DashbarProps> = ({ isClicked, setIsClicked }) => {
     const handleButton = () => {
         setShowOkButton(true);
     };
-
 
     const handleClick = () => setIsClicked(!isClicked)
     return (
@@ -59,8 +59,8 @@ const Dashbar: React.FC<DashbarProps> = ({ isClicked, setIsClicked }) => {
                     </div>
                     <hr className='m-0' />
                     <div className="options my-2">
-                        <a href="#" className='option d-block my-3 fw-bold text-muted' onClick={() => setIsOpen(!isOpen)}><img src={userImg} alt="" width='22px' />Profile</a>
-                        <a href="#" className='option d-block my-3 fw-bold text-muted'><img src={logoutImg} alt="" width='22px' />Logout</a>
+                        <Link to={'#'} className='option d-block my-3 fw-bold text-muted' onClick={() => setIsOpen(!isOpen)}><img src={userImg} alt="" width='22px' />Profile</Link>
+                        <Link to={'/logout'} className='option d-block my-3 fw-bold text-muted'><img src={logoutImg} alt="" width='22px' />Logout</Link>
                     </div>
                 </div>
             </div>

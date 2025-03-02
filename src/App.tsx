@@ -1,5 +1,5 @@
 import './App.css';
-import { Dashboard, GoUp, HomePage, ThemeProvider } from './index';
+import { Dashboard, GoUp, HomePage, Logout, Signup, Login, ThemeProvider } from './index';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
@@ -22,6 +22,10 @@ function App() {
           <Routes>
             <Route path='/' element={<HomePage />} />
             <Route path='/dashboard' element={<Dashboard />} />
+            <Route path='/signup' element={<Signup />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/logout' element={<Logout />} />
+
           </Routes>
           {
             showBtn && (

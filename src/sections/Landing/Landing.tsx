@@ -8,7 +8,8 @@ const Landing: React.FC = () => {
         <div className="main-text text-center py-4 d-flex flex-column align-items-center">
           <h1 className='intro fw-bold'>Take Control of Your Life ⚡</h1>
           <p className='text-muted my-5'>Empower your personal growth by simplifying daily tasks and fostering meaningful habits. Organize priorities, cultivate consistency, and track progress with clarity and purpose.</p>
-          <GGlink title='Get Started' color='white' backgroundColor='black' padding='9px 16px' />
+          {/* <GGlink title='Get Started' className='bg-dark text-light px-3 py-2' takeTo={'/signup'} /> */}
+          <GGlink title='Get into dashboard !' className='bg-dark text-light px-3 py-2' takeTo={'/dashboard'} />
         </div>
       </div>
     </>
