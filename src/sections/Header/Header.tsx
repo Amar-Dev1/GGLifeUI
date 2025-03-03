@@ -14,15 +14,16 @@ const Header: React.FC = () => {
                 <Link to={'/'} className='d-flex justify-content-around align-items-center'><img src={gglifeLogo} alt="" width={'26px'}/><span className='logo fw-bold fs-2 mx-2'>GGLife</span></Link>
                 <div className='wide-nav d-flex'>
                     <a className='px-4 py-2 mx-1 text-dark' href="/">Home</a>
+                    <a className='px-4 py-2 mx-1 text-dark' href="#how">How it works</a>
+                    
                     <div className='about-link px-4 py-2 mx-1 text-dark'>
                         about
                         <img src={arrowDown} alt="" style={{ width: '10px', marginLeft: '10px' }} />
                         <div className='about-links d-flex flex-column py-3 px-5  shadow'>
-                            <a href="#about" className='text-dark'>About GGLife</a><hr />
-                            <a href="#showcase" className='text-dark'>Why GGLife ?</a>
+                            <a href="#showcase" className='text-dark'>Why GGLife ?</a><hr />
+                            <a href="#about" className='text-dark'>About GGLife</a>
                         </div>
                     </div>
-                    <a className='px-4 py-2 mx-1 text-dark' href="#how">How it works</a>
                     <a className='px-4 py-2 mx-1 text-dark' href="#contact">Contact us</a>
                 </div>
                 <div className='sub-wide-nav'>

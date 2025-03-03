@@ -42,6 +42,11 @@ export { default as tasksImg } from './assets/dashboard/tasks.svg';
 export { default as notImg } from './assets/dashboard/note.svg';
 export { default as notesImg } from './assets/dashboard/notes.svg';
 export { default as habbitsImg } from './assets/dashboard/habits.svg';
+export { default as eyeImg } from './assets/eye.svg';
+export { default as eyeSlashImg } from './assets/eye-slash.svg';
+export { default as panelmg } from './assets/dashboard/panelmg.svg';
+export { default as historyImg } from './assets/dashboard/history.svg';
+
 // png
 export { default as gglifeLogo } from './assets/gglife-logo.png';
 export { default as barIcon } from './assets/bar-icon.png';

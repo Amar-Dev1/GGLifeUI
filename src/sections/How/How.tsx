@@ -15,10 +15,10 @@ const How: React.FC = () => {
                     }} />
                 </div>
                 <div className="col-md-6 my-3">
-                    <Step stepClassName='step-2' title='2. Discover the dashboard' description="Navigate a clean, intuitive interface where tasks, notes, and habit trackers align seamlessly. Customize your workspace to reflect your unique goals and priorities." img={dashboardImg} />
+                    <Step stepClassName='step-2' title='2. Discover the dashboard' description="Navigate a clean, intuitive interface where tasks, notes, and weekly planners align seamlessly. Customize your workspace to reflect your unique goals and priorities." img={dashboardImg} />
                 </div>
                 <div className="col-md-6 my-3">
-                    <Step stepClassName='step-3' title='3. Start your journey !' description="Begin building habits, completing tasks, and tracking milestones with actionable insights. Watch progress unfold as you move closer to your aspirations, day by day." img={discoverImg} />
+                    <Step stepClassName='step-3' title='3. Start your journey !' description="Begin planning your week, completing tasks, and tracking milestones with actionable insights. Watch progress unfold as you move closer to your aspirations, day by day." img={discoverImg} />
                 </div>
             </div>
         </div>

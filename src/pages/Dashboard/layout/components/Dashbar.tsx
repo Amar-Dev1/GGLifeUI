@@ -68,6 +68,8 @@ const Dashbar: React.FC<DashbarProps> = ({ isClicked, setIsClicked }) => {
             </div>
             {
                 isOpen &&
+               <>
+                <div className="form-overlay"></div>
                 <div className="user-form-popup position-fixed d-flex flex-column p-4 rounded-3 shadow">
                     <MainTitle head='Your profile' />
                     <button className='close-btn text-dark p-2 fw-bold position-absolute' onClick={() => setIsOpen(!isOpen)}>✖</button>
@@ -94,6 +96,7 @@ const Dashbar: React.FC<DashbarProps> = ({ isClicked, setIsClicked }) => {
                         }
                     </form>
                 </div>
+               </>
             }
         </div>
     )

@@ -9,9 +9,9 @@ const HomePage: React.FC = () => {
                 <Landing />
             </div>
             <Features />
-            <About />
             <How />
             <Showcase />
+            <About />
             <Contact />
         </>
     )

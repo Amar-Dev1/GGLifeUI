@@ -7,14 +7,14 @@ const Features: React.FC = () => {
     const allFeatures: FeatureProps[] = [
         { id: 1, icon: noteIcon, title: 'Create notes', description: 'Capture your thoughts effortlessly.' },
         { id: 2, icon: taskIcon, title: 'Make tasks', description: 'Stay on top of your to-do list.' },
-        { id: 3, icon: habitIcon, title: 'set habits', description: 'Build lasting, positive routines.' },
-        { id: 4, icon: trackIcon, title: 'track your progress', description: 'Visualize your growth and achievements.' },
+        { id: 3, icon: habitIcon, title: 'Plan your week ', description: 'Plan your week in a perfect and exciting way !' },
+        { id: 4, icon: trackIcon, title: 'Track your progress', description: 'Visualize your growth and achievements.' },
     ]
     return (
         <>
             <div id="features" className='container-fluid'>
                 <div className="container">
-                    <MainTitle head='Time to grow your life with GGLife ✨' bio='Elevate productivity and personal growth by organizing tasks, notes, and habits in one cohesive platform. Track progress with precision and unlock your potential.' headColor='black' headSize='42px' />
+                    <MainTitle head='Time to grow your life with GGLife ✨' bio='Elevate productivity and personal growth by organizing tasks, notes, and weekly planning in one cohesive platform. Track progress with precision and unlock your potential.' headColor='black' headSize='42px' />
                     <div className="row py-4 mt-5">
                         {
                             allFeatures.map(item => (
