@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react';
 import '../Layout.css';
 import { barIcon, testImg, userImg, logoutImg, sunImg, moonImg, MainTitle, editImg } from '../../../..';
-import { useTheme } from '../../../../components/ThemeProvider';
 import { Link } from 'react-router-dom';
+import { useTheme } from '../../../../components/ThemeProvider';
 
 export interface DashbarProps {
     isClicked?: boolean;
@@ -33,15 +33,15 @@ const Dashbar: React.FC<DashbarProps> = ({ isClicked, setIsClicked }) => {
 
     const handleClick = () => setIsClicked(!isClicked)
     return (
-        <div className={`dashbar bg-light shadow p-3 my-3 rounded d-flex align-items-center justify-content-around ${theme}`}>
+        <div className={`dashbar bg-light shadow p-3 my-3 rounded d-flex align-items-center justify-content-around `}>
             <div className="bar-wrapper" onClick={handleClick}>
                 <img src={barIcon} alt="" loading='lazy' width={'20px'} className='bar-icon icon' />
             </div>
-            <div className="theme-wrapper mx-3" onClick={toggleTheme}>
+            <div className="theme-wrapper mx-4 px-2 py-1" onClick={toggleTheme}>
                 {theme === 'dark' ? (
-                    < img src={sunImg} alt="" loading='lazy' width={'25px'} className='icon' />
+                        < img src={sunImg} alt="" loading='lazy' width={'100%'} className='icon' />
                 ) : (
-                    < img src={moonImg} alt="" loading='lazy' width={'25px'} className='icon' />
+                        < img src={moonImg} alt="" loading='lazy' width={'100%'} className='icon' />
                 )
                 }
             </div>
@@ -68,35 +68,35 @@ const Dashbar: React.FC<DashbarProps> = ({ isClicked, setIsClicked }) => {
             </div>
             {
                 isOpen &&
-               <>
-                <div className="form-overlay"></div>
-                <div className="user-form-popup position-fixed d-flex flex-column p-4 rounded-3 shadow">
-                    <MainTitle head='Your profile' />
-                    <button className='close-btn text-dark p-2 fw-bold position-absolute' onClick={() => setIsOpen(!isOpen)}>✖</button>
-                    <form action="" method='POST' onSubmit={(e) => e.preventDefault()} className='w-100'>
-                        <div className="input-group-prepend my-3">
-                            <div className="profile-img"><img src={testImg} alt="" width={'70px'} className='rounded-circle border my-2' /></div>
-                            <input type="file" name="image" id='image' />
-                        </div>
-                        <div className=" input-group-prepend my-3">
-                            <label htmlFor="name">Your name</label>
-                            <input type="text" name="name" id='name' className='position-relative rounded form-control' required readOnly={true} ref={nameInputRef} onChange={handleButton} />
-                            <button className='edit-btn position-absolute rounded' onClick={() => handleInput('name')}><img src={editImg} alt="" width={'18px'} /></button>
-                        </div>
-                        <div className=" input-group-prepend my-3">
-                            <label htmlFor="name">Your Email</label>
-                            <input type="email" name="email" className='position-relative rounded form-control' required readOnly={true} ref={emailInputRef} onChange={handleButton} />
-                            <button className='edit-btn position-absolute rounded' onClick={() => handleInput('email')}><img src={editImg} alt="" width={'18px'} /></button>
-                        </div>
-                        {
-                            showOkButton &&
-                            <div className="w-100 text-center">
-                                <button className={`btn btn-dark text-light rounded fw-bold ok-btn`}>Ok</button>
+                <>
+                    <div className="form-overlay"></div>
+                    <div className="user-form-popup position-fixed d-flex flex-column p-4 rounded-3 shadow">
+                        <MainTitle head='Your profile' />
+                        <button className='close-btn text-dark p-2 fw-bold position-absolute' onClick={() => setIsOpen(!isOpen)}>✖</button>
+                        <form action="" method='POST' onSubmit={(e) => e.preventDefault()} className='w-100'>
+                            <div className="input-group-prepend my-3">
+                                <div className="profile-img"><img src={testImg} alt="" width={'70px'} className='rounded-circle border my-2' /></div>
+                                <input type="file" name="image" id='image' />
                             </div>
-                        }
-                    </form>
-                </div>
-               </>
+                            <div className=" input-group-prepend my-3">
+                                <label htmlFor="name">Your name</label>
+                                <input type="text" name="name" id='name' className='position-relative rounded form-control' required readOnly={true} ref={nameInputRef} onChange={handleButton} />
+                                <button className='edit-btn position-absolute rounded' onClick={() => handleInput('name')}><img src={editImg} alt="" width={'18px'} /></button>
+                            </div>
+                            <div className=" input-group-prepend my-3">
+                                <label htmlFor="name">Your Email</label>
+                                <input type="email" name="email" className='position-relative rounded form-control' required readOnly={true} ref={emailInputRef} onChange={handleButton} />
+                                <button className='edit-btn position-absolute rounded' onClick={() => handleInput('email')}><img src={editImg} alt="" width={'18px'} /></button>
+                            </div>
+                            {
+                                showOkButton &&
+                                <div className="w-100 text-center">
+                                    <button className={`btn btn-dark text-light rounded fw-bold ok-btn`}>Ok</button>
+                                </div>
+                            }
+                        </form>
+                    </div>
+                </>
             }
         </div>
     )
