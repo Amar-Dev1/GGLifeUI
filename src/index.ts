@@ -26,6 +26,7 @@ export { default as Item } from './pages/Dashboard/layout/components/Item';
 export { default as Sidebar } from './pages/Dashboard/layout/components/Sidebar';
 export { default as Dashbar } from './pages/Dashboard/layout/components/Dashbar';
 export { default as Content } from './pages/Dashboard/layout/components/Content';
+export { default as DashCard } from './pages/Dashboard/layout/components/DashCard';
 
 // assets 
 // svg
@@ -48,7 +49,7 @@ export { default as panelmg } from './assets/dashboard/panelmg.svg';
 export { default as historyImg } from './assets/dashboard/history.svg';
 
 // png
-export { default as gglifeLogo } from './assets/gglife-logo.png';
+export { default as gglifeLogo } from '../public/gglife-logo.png';
 export { default as barIcon } from './assets/bar-icon.png';
 export { default as arrowDown } from './assets/arrow-down.png';
 export { default as noteIcon } from './assets/note.png';

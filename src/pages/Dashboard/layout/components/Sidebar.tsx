@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import '../Layout.css';
 import { Category, gglifeLogo, taskImg, notImg, notesImg, habbitsImg, logoutImg, tasksImg, panelmg,historyImg } from '../../../../index';
-import { useTheme } from '../../../../components/ThemeProvider';
 
 export interface SidebarProps {
     isClicked?: boolean;
@@ -9,10 +8,9 @@ export interface SidebarProps {
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ isClicked = false, setIsClicked }) => {
-    const { theme } = useTheme()
     const [activeItem, setActiveItem] = useState<string | null>(`Dashboard`);
     return (
-        <div className={`sidebar shadow rounded ${isClicked ? 'open' : ''} ${theme}`}>
+        <div className={`sidebar shadow rounded ${isClicked ? 'open' : ''}`}>
             <div className={`head-wrapper d-flex justify-content-center align-items-center`}>
                 <img src={gglifeLogo} alt="" width={'29px'} style={{ marginRight: '5px' }} />
                 <h3 className='fw-bold -0 m-0'>GGLife</h3>
