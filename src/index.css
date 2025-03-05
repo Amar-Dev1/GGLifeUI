@@ -1,3 +1,5 @@
+@import 'tailwindcss';
+
 ::-webkit-scrollbar {
     width: 7px;
 }
