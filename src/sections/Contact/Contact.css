@@ -1,6 +1,4 @@
 #contact {
-    padding-top: 75px;
-    padding-bottom: 75px;
     position: relative;
     overflow: hidden;
     background-image: url('../../assets/stars.png');
@@ -8,45 +6,6 @@
     background-size: cover;
     background-attachment: fixed;
     animation: moveBackground 25s linear infinite;
-}
-
-#contact form {
-    z-index: 1;
-}
-
-#contact form textarea {
-    min-height: 200px;
-}
-
-#contact form input,
-#contact form textarea {
-    transition: .1s;
-}
-
-#contact form input:focus,
-#contact form textarea:focus {
-    outline: 1.5px solid aliceblue;
-    transform: scale(1.01);
-}
-
-#contact form button {
-    display: block;
-    width: 100%;
-    transition: .3s;
-}
-
-#contact form button:hover {
-    transform: translateY(-4px);
-}
-
-/* footer part */
-#footer {
-    border-top: 1px solid #222;
-}
-
-#footer p {
-    color: #888;
-    opacity: .7;
 }
 
 
@@ -60,14 +19,9 @@
     }
 }
 
-@media (max-width:768px) {
-    #contact form input {
-        width: 100%;
-    }
-
-    #contact {
+@media (max-width:768px) { 
+   #contact {
         background-size: contain;
         animation: moveBackground 35s linear infinite;
-        
     }
 }

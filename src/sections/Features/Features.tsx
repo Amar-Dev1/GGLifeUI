@@ -1,5 +1,4 @@
 import React from 'react';
-import './Features.css';
 import { FeatureProps } from '../../components/Feature';
 import { MainTitle, Feature, noteIcon, taskIcon, habitIcon, trackIcon } from '../../index'
 
@@ -12,18 +11,18 @@ const Features: React.FC = () => {
     ]
     return (
         <>
-            <div id="features" className='container-fluid'>
-                <div className="container">
-                    <MainTitle head='Time to grow your life with GGLife ✨' bio='Elevate productivity and personal growth by organizing tasks, notes, and weekly planning in one cohesive platform. Track progress with precision and unlock your potential.' headColor='black' headSize='42px' />
-                    <div className="row py-4 mt-5">
+            <div id="features" className='bg-[#eee] w-full py-28'>
+                <div className="container w-[95%] lg:w-[90%] mx-auto ">
+                    <MainTitle head='Time to grow your life with GGLife ✨' bio='Elevate productivity and personal growth by organizing tasks, notes, and weekly planning in one cohesive platform. Track progress with precision and unlock your potential.' headColor='black' headClassname='text-2xl lg:text-5xl' />
+                     <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 mt-28">
                         {
                             allFeatures.map(item => (
-                                <div className="col-md-6 my-2 d-flex justify-content-center align-items-center" key={item.id}>
+                                <div className="my-2 flex justify-center items-center" key={item.id}>
                                     <Feature title={item.title} icon={item.icon} description={item.description} />
                                 </div>
                             ))
                         }
-                    </div>
+                    </div> 
                 </div>
             </div>
         </>
