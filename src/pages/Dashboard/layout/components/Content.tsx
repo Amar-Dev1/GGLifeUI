@@ -3,31 +3,31 @@ import { DashCard } from '../../../..';
 
 const MainContent: React.FC = () => {
   return (
-    <div id='content'>
-      <div className="row">
-        <div className="col-md-8">
+    <div id='content' className={``}>
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-1">
+        <div className="lg:col-span-8">
           <DashCard cardTitle='Average rate' cardDes='blablabla' cardClassName='average-rate-card'>
             blablabla
           </DashCard>
         </div>
-        <div className="col-md-4">
+        <div className="lg:col-span-4">
           <DashCard cardTitle='Highest score' cardClassName='highest-score-card'>
             blablabla
           </DashCard>
         </div>
       </div>
-      <div className="row my-3">
-        <div className="col-md-4">
+      <div className="grid grid-col-1 lg:grid-cols-12 gap-1">
+        <div className="lg:col-span-4">
           <DashCard cardTitle='tasks' cardClassName='tasks-card'>
             blablabla
           </DashCard>
         </div>
-        <div className="col-md-4">
+        <div className="lg:col-span-4">
           <DashCard cardTitle='notes' cardClassName='notes-card'>
             blablabla
           </DashCard>
         </div>
-        <div className="col-md-4">
+        <div className="lg:col-span-4">
           <DashCard cardTitle="history" cardClassName='history-card'>
             blablabla
           </DashCard>

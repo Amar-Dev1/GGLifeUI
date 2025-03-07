@@ -1,19 +1,18 @@
-import React from 'react'
-
+import React from 'react';
 interface MainTitle {
     head: string;
     bio?: string;
     headColor?: string;
-    headSize?:string;
-    headClassname?:string;
-    
+    headSize?: string;
+    headClassname?: string;
+
 }
 
-const MainTitle: React.FC<MainTitle> = ({ head, bio, headColor: color,headSize:fontSize,headClassname }) => {
+const MainTitle: React.FC<MainTitle> = ({ head, bio, headColor: color, headSize: fontSize, headClassname }) => {
     return (
-        <div className={`main-title text-center d-flex justify-content-center align-items-center flex-column ${headClassname}`}>
-            <h2 style={{ color, fontSize}} className='fw-bold'>{head}</h2>
-            <p style={{fontSize:'16px', opacity:'.6',width:'60%'}}>{bio}</p>
+        <div className={`main-title text-center flex justify-center items-center flex-col`}>
+            <h2 style={{ color, fontSize }} className={`font-bold ${headClassname}`}>{head}</h2>
+            <p className='text-sm my-3 text-gray-500 w-[65%]'>{bio}</p>
         </div>
     )
 }
