@@ -1,17 +1,16 @@
 import React, { useEffect } from 'react'
-import Contact from '../../sections/Contact/Contact';
-import GGLink from '../../components/GGlink';
+import { Contact, GGlink } from '../..';
 const Logout: React.FC = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [])
     return (
         <>
-            <div id='logout' className='d-flex flex-column justify-content-center align-items-center p-5' style={{ minHeight: '100vh' }}>
-                <div style={{ height: '75vh', width: '75vw' }} className="position-relative bg-light d-flex flex-column justify-content-center align-items-center text-center p-3 border-primary rounded-4 shadow">
-                    <GGLink title='← Home' takeTo='/' className='btn btn-dark position-absolute' style={{ top: '10px', left: '10px' }} />
-                    <h2 className='my-3'>Are you sure to logout ? 😥</h2>
-                    <GGLink title='Logout' takeTo='#' className='bg-dark text-light' />
+            <div id='logout' className='min-h-screen flex flex-col justify-center items-center p-20'>
+                <div className="relative h-[75vh] w-[75vw] bg-white flex flex-col justify-center items-center text-center  rounded-3xl shadow">
+                    <GGlink title='← Home' takeTo='/' className='bg-black text-white absolute top-4 left-4' />
+                    <h2 className='mb-3 font-bold text-xl lg:text-4xl'>Are you sure to logout ? 😥</h2>
+                    <GGlink title='Logout' takeTo='#' className='bg-black text-white' />
                 </div>
             </div>
             <Contact />

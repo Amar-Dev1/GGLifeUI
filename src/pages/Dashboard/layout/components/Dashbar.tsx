@@ -33,34 +33,34 @@ const Dashbar: React.FC<DashbarProps> = ({ isClicked, setIsClicked }) => {
 
     const handleClick = () => setIsClicked(!isClicked)
     return (
-        <div className={`dashbar bg-light shadow p-3 my-3 rounded d-flex align-items-center justify-content-around `}>
-            <div className="bar-wrapper" onClick={handleClick}>
-                <img src={barIcon} alt="" loading='lazy' width={'20px'} className='bar-icon icon' />
+        <div className={`relative shadow py-3 px-4 mb-5 flex items-center rounded-2xl ${theme === 'dark' ? 'bg-[#2a2b3f]' : 'bg-white'}`}>
+            <div className="cursor-pointer block lg:hidden w-[25px]" onClick={handleClick}>
+                <img src={barIcon} alt="" loading='lazy' className={`w-full ${theme === 'dark' ? 'invert-100' : ''}`} />
             </div>
-            <div className="theme-wrapper mx-4 px-2 py-1" onClick={toggleTheme}>
+            <div className="theme-wrapper cursor-pointer w-[30px] mx-3 lg:mx-0" onClick={toggleTheme}>
                 {theme === 'dark' ? (
-                        < img src={sunImg} alt="" loading='lazy' width={'100%'} className='icon' />
+                    < img src={sunImg} alt="" loading='lazy' className={`w-full ${theme === 'dark' ? 'invert-100' : ''} `} />
                 ) : (
-                        < img src={moonImg} alt="" loading='lazy' width={'100%'} className='icon' />
+                    < img src={moonImg} alt="" loading='lazy' className={`w-full`} />
                 )
                 }
             </div>
-            <div className='profile-wrapper' tabIndex={0}>
-                <img src={testImg} alt="" className='w-100 rounded-circle border' loading='lazy' />
-                <div className="details d-flex flex-column justify-content-center p-3 rounded">
-                    <div className="user d-flex align-items-center mb-1">
-                        <div className="user-img d-flex justify-content-center align-items-center">
-                            <img src={testImg} alt="" loading='lazy' className='w-100 rounded-circle border' />
+            <div className='w-[45px] cursor-pointer ml-auto group' tabIndex={0}>
+                <img src={testImg} alt="" className='w-100 rounded-full border-1 border-gray-300' loading='lazy' />
+                <div className={`w-[210px] h-auto px-3 flex flex-col justify-center rounded-2xl absolute top-18 right-6 shadow scale-0 group-focus:scale-100 transition-all duration-300 ${theme === 'dark' ? 'bg-[#2a2b3f] drop-shadow-2xl text-white' : 'bg-white'}`}>
+                    <div className="flex items-center p-3 mb-1">
+                        <div className="w-[45px] mr-3 flex justify-center items-center">
+                            <img src={testImg} alt="" loading='lazy' className='w-full rounded-full border-1 border-gray-300' />
                         </div>
                         <div className="user-name">
-                            <p className='m-0 fw-bold'>Fulan</p>
+                            <p className='m-0 font-bold'>Fulan</p>
                             <p className='m-0'>user</p>
                         </div>
                     </div>
-                    <hr className='m-0' />
+                    <hr className='opacity-25' />
                     <div className="options my-2">
-                        <Link to={'#'} className='option d-block my-3 fw-bold text-muted' onClick={() => setIsOpen(!isOpen)}><img src={userImg} alt="" width='22px' />Profile</Link>
-                        <Link to={'/logout'} className='option d-block my-3 fw-bold text-muted'><img src={logoutImg} alt="" width='22px' />Logout</Link>
+                        <Link to={'#'} className={`my-3 font-bold text-gray-500 flex hover:translate-x-2 transition-transform ${theme === 'dark' ? 'text-white' : ''}`} onClick={() => setIsOpen(!isOpen)}><img src={userImg} alt="" className={`w-[20px] mr-2 ${theme === 'dark' ? 'invert-100' : ''}`} />Profile</Link>
+                        <Link to={'/logout'} className={`my-3 font-bold text-gray-500 flex hover:translate-x-2 transition-transform ${theme === 'dark' ? 'text-white' : ''}`}><img src={logoutImg} alt="" className={`w-[20px] mr-2 ${theme === 'dark' ? 'invert-100' : ''}`} />Logout</Link>
                     </div>
                 </div>
             </div>

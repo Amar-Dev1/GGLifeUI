@@ -1,4 +1,3 @@
-import './App.css';
 import { Dashboard, GoUp, HomePage, Logout, Signup, Login, ThemeProvider } from './index';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
