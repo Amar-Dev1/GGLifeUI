@@ -14,31 +14,34 @@ const Login: React.FC = () => {
     }, [])
     return (
         <>
-            <div id='login' className='d-flex flex-column justify-content-center align-items-center p-5 shadow' style={{ minHeight: '100vh' }}>
-                <div style={{ height: '75vh', width: '75vw' }} className="position-relative bg-light d-flex flex-column justify-content-center align-items-center  p-3 border-primary rounded-4 shadow">
-                    <div className="brand d-flex justify-content-center align-items-center mb-4">
-                        <img src={gglifeLogo} alt="⚡" style={{ width: '27px' }} loading='lazy' />
-                        <h3 className='fw-bold p-0 m-0'>GGLife</h3>
+            <div id='login' className='min-h-screen flex flex-col justify-center items-center p-5 shadow'>
+                <div className="relative min-w-[75vw] min-h-[75vh] bg-[#f8f9fa] flex flex-col justify-center items-center p-3 rounded-2xl shadow">
+                    <div className="brand flex justify-center items-center my-2">
+                        <img src={gglifeLogo} alt="⚡" loading='lazy' className='w-6' />
+                        <h3 className='font-bold text-3xl'>GGLife</h3>
                     </div>
-                    <form action="" method='POST' onSubmit={(e) => e.preventDefault()} style={{ width: '80%' }}>
-                        <div className="input-group my-2">
-                            <label htmlFor="email" className='mb-1'><img src={emailImg} alt="" width={'20px'} className='mx-2' />Your email</label>
-                            <input type="email" name="email" id="email" className='form-control rounded-4 w-100 ' />
+                    <form action="" method='POST' className='w-[80%] py-2' onSubmit={(e) => e.preventDefault()}>
+                        <div className="my-4">
+                            <label htmlFor="email" className='mb-1 flex'><img src={emailImg} alt="" className='mx-2 w-5' />Your email</label>
+                            <input type="email" name="email" id="email" className='bg-white p-2 shadow rounded-2xl w-full focus:ring-1 focus:shadow-2xl transition-all' required />
                         </div>
-                        <div className="input-group my-2">
-                            <label htmlFor="password" className='mb-1'><img src={passwordImg} alt="" width={'20px'} className='mx-2' />Your password</label>
-                            <input type="password" name="password" id="password" className='form-control rounded-4 w-100 ' ref={passwordInputRef} />
+                        <div className="my-4 relative">
+                            <label htmlFor="password" className='mb-1 flex'><img src={passwordImg} alt="" className='mx-2 w-5' />Your password</label>
+                        
+                            <input type="password" name="password" id="password" className='bg-white p-2 shadow rounded-2xl w-full focus:ring-1 focus:shadow-2xl transition-all' ref={passwordInputRef} required />
                             {
-                                visible ? (<img src={eyeSlashImg} alt="" style={{ width: '20px', opacity: '.5', cursor: 'pointer',position:'absolute',right:'10px',top:'37px',zIndex:'99' }} onClick={handlePassword} />) :
-                                    (<img src={eyeImg} alt="" style={{ width: '20px', opacity: '.5', cursor: 'pointer',position:'absolute',right:'10px',top:'37px',zIndex:'99' }} onClick={handlePassword} />)
+                                visible ? (<img src={eyeSlashImg} alt="" className='w-5 opacity-50 cursor-pointer absolute right-3 bottom-2 z-[99]' onClick={handlePassword} />) : (
+                                    <img src={eyeImg} alt="" className='w-5 opacity-50 cursor-pointer absolute right-3 bottom-2 z-[99] ' onClick={handlePassword} />
+                                )
                             }
                         </div>
-                        <a href="">forget password?</a>
-                        <button className='btn btn-dark w-100 rounded-4 my-3'>Login →</button>
-                        <a href="/signup">New on our platform? <span className='text-primary'>Register</span></a>
+                        <a href="#" className='text-sm block my-2'>Forget your password ?</a>
+                        <button className='bg-black text-white w-full rounded-2xl p-2 my-3 hover:-translate-y-1 transition-all cursor-pointer'>Login →</button>
+                        <a href="/signup">Don`t have an account? <span className='text-blue-500'>Register</span></a>
                     </form>
                 </div>
             </div>
+
             <Contact />
         </>
     )
