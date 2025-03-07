@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import '../Layout.css';
-import { Category, gglifeLogo, taskImg, notImg, notesImg, habbitsImg, logoutImg, tasksImg, panelmg,historyImg } from '../../../../index';
+import { Category, gglifeLogo, taskImg, notImg, notesImg, habbitsImg, logoutImg, tasksImg, panelmg, historyImg } from '../../../../index';
+import { useTheme } from '../../../../components/ThemeProvider';
 
 export interface SidebarProps {
     isClicked?: boolean;
@@ -9,31 +9,33 @@ export interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({ isClicked = false, setIsClicked }) => {
     const [activeItem, setActiveItem] = useState<string | null>(`Dashboard`);
+    const { theme } = useTheme();
+
     return (
-        <div className={`sidebar shadow rounded ${isClicked ? 'open' : ''}`}>
-            <div className={`head-wrapper d-flex justify-content-center align-items-center`}>
-                <img src={gglifeLogo} alt="" width={'29px'} style={{ marginRight: '5px' }} />
-                <h3 className='fw-bold -0 m-0'>GGLife</h3>
+        <div className={`sidebar fixed top-0 -left-[250px] lg:left-0 h-screen w-0 lg:w-[250px] overflow-y-auto flex flex-col p-6 z-[999] shadow opacity-0 lg:opacity-100 transition-all ${isClicked ? 'translate-x-[250px] w-full opacity-100' : ''} ${theme === 'dark' ? 'bg-[#2a2b3f] text-white' : 'bg-white'}`}>
+            <div className={`head-wrapper w-[230px] p-0 lg:py-9 flex justify-center items-center fixed top-[2%] left-1/2 -translate-x-1/2 lg:top-0 lg:left-0 lg:translate-x-0 z-[999] ${theme === 'dark' ? 'bg-[#2a2b3f]' : 'bg-white'}`}>
+                <img src={gglifeLogo} alt="" className='w-[29px] mr-1' />
+                <h3 className='font-bold p-0 m-0 text-xl lg:text-2xl'>GGLife</h3>
             </div>
-            <div className="cats mt-5">
+            <div className={`mt-24 p-0 ${theme==='dark'?'text-white':''}`}>
                 {
                     isClicked &&
-                    <button className="close-btn p-2 fw-bold" onClick={() => setIsClicked(false)}>✖</button>
+                    <button className="cursor-pointer p-2 font-bold absolute right-[10px] top-[10px] w-[40px] h-[40px] rounded-full z-[1000]" onClick={() => setIsClicked(false)}>✖</button>
                 }
                 <Category
-                catTitle='Home'
+                    catTitle='Home'
                     items={[
                         {
                             title: 'Dashboard',
                             icon: panelmg,
                             onClick: () => setIsClicked(false),
-                            itemClass:'p-0 m-0 fw-bold'                          
+                            itemClass: 'p-0 m-0 font-bold'
                         }
                     ]
-                }
+                    }
                     activeItem={activeItem} setActiveItem={setActiveItem}
-                    />
-                     <Category
+                />
+                <Category
                     catTitle='Week planning'
                     items={[
                         {
@@ -48,7 +50,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isClicked = false, setIsClicked }) =>
                         },
                     ]}
                     activeItem={activeItem} setActiveItem={setActiveItem}
-                    />
+                />
                 <Category
                     catTitle='Tasks'
                     items={[
@@ -65,7 +67,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isClicked = false, setIsClicked }) =>
                     ]
                     }
                     activeItem={activeItem} setActiveItem={setActiveItem}
-                    />
+                />
                 <Category
                     catTitle='Notes'
                     items={[
@@ -81,15 +83,18 @@ const Sidebar: React.FC<SidebarProps> = ({ isClicked = false, setIsClicked }) =>
                         }
                     ]}
                     activeItem={activeItem} setActiveItem={setActiveItem}
-                    />
+                />
                 <Category
                     catTitle='Account'
                     items={[
                         {
                             title: 'Logout',
                             icon: logoutImg,
-                            itemClass: 'bg-danger active',
-                            onClick: () => setIsClicked(false)
+                            itemClass: 'bg-red-500 font-bold text-white opacity-100',
+                            isActive: true,
+                            onClick: () => setIsClicked(false),
+                            titleStyle: { opacity: '1' },
+                            iconStyle:{opacity:'1',filter:'invert(100)'}
                         },
 
                     ]}
