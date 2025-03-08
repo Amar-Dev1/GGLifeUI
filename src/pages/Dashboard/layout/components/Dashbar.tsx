@@ -67,8 +67,8 @@ const Dashbar: React.FC<DashbarProps> = ({ isClicked, setIsClicked }) => {
             <div>
             </div>
             {
-                isOpen &&
-                <div className={`form-overlay fixed top-0 left-0 w-full h-full bg-[rgba(33, 33, 33, 0.5)] backdrop-blur-md z-[98]`}></div>
+                isOpen && // overlay 👇
+                <div className={`fixed top-0 left-0 w-full h-full bg-[rgba(33, 33, 33, 0.5)] backdrop-blur-md z-[98]`}></div>
             }
             <div className={`w-[80vw] min-h-[60%] lg:w-[55%] lg:min-h[70%]  z-[99] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 fixed flex flex-col p-7 rounded-2xl shadow-2xl scale-0 transition-all ${theme === 'dark' ? 'bg-[#2a2b3f] text-white drop-shadow-2xl' : 'bg-white text-black'} ${isOpen ? 'scale-100' : ''}`}>
                 <MainTitle head='Your profile' headClassname='text-md lg:text-2xl'/>

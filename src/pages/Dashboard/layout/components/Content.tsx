@@ -3,8 +3,8 @@ import { DashCard } from '../../../..';
 
 const MainContent: React.FC = () => {
   return (
-    <div id='content' className={``}>
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-1">
+    <div id='content'>
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-2">
         <div className="lg:col-span-8">
           <DashCard cardTitle='Average rate' cardDes='blablabla' cardClassName='average-rate-card'>
             blablabla
@@ -16,7 +16,7 @@ const MainContent: React.FC = () => {
           </DashCard>
         </div>
       </div>
-      <div className="grid grid-col-1 lg:grid-cols-12 gap-1">
+      <div className="grid grid-col-1 lg:grid-cols-12 gap-2 mt-2">
         <div className="lg:col-span-4">
           <DashCard cardTitle='tasks' cardClassName='tasks-card'>
             blablabla

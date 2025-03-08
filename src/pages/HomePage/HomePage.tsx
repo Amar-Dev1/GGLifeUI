@@ -1,17 +1,29 @@
 import React from 'react'
-import { About, Contact, Features, Header, How, Landing, Showcase } from '../..';
+import { About, Contact, Features, Header, How, Landing, Showcase,FadeIn } from '../..';
 const HomePage: React.FC = () => {
     return (
         <>
             <div className="hero py-5 min-h-screen">
                 <Header />
-                <Landing />
+                <FadeIn>
+                    <Landing />
+                </FadeIn>
             </div>
-            <Features />
-            <How />
-            <Showcase />
-            <About />
-            <Contact />
+            <FadeIn>
+                <Features />
+            </FadeIn>
+            <FadeIn>
+                <How />
+            </FadeIn>
+            <FadeIn>
+                <Showcase />
+            </FadeIn>
+            <FadeIn>
+                <About />
+            </FadeIn>
+            <FadeIn>
+                <Contact />
+            </FadeIn>
         </>
     )
 }
