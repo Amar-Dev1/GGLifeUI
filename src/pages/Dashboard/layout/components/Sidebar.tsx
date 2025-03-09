@@ -12,7 +12,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isClicked = false, setIsClicked }) =>
     const { theme } = useTheme();
 
     return (
-        <div className={`sidebar fixed top-0 -left-[250px] lg:left-0 h-screen w-0 lg:w-[250px] overflow-y-auto flex flex-col p-6 z-[999] shadow opacity-0 lg:opacity-100 transition-all ${isClicked ? 'translate-x-[250px] w-full opacity-100' : ''} ${theme === 'dark' ? 'bg-[#2a2b3f] text-white' : 'bg-white'}`}>
+        <div className={`sidebar fixed top-0 -left-[250px] lg:left-0 h-screen w-0 lg:w-[250px] overflow-y-auto flex flex-col p-6 z-[9999] shadow opacity-0 lg:opacity-100 transition-all ${isClicked ? 'translate-x-[250px] w-full opacity-100' : ''} ${theme === 'dark' ? 'bg-[#2a2b3f] text-white' : 'bg-white'}`}>
             <div className={`head-wrapper w-[230px] p-0 lg:py-9 flex justify-center items-center fixed top-[2%] left-1/2 -translate-x-1/2 lg:top-0 lg:left-0 lg:translate-x-0 z-[999] ${theme === 'dark' ? 'bg-[#2a2b3f]' : 'bg-white'}`}>
                 <img src={gglifeLogo} alt="" className='w-[29px] mr-1' />
                 <h3 className='font-bold p-0 m-0 text-xl lg:text-3xl'>GGLife</h3>
