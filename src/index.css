@@ -48,3 +48,14 @@ textarea {
     border: none;
     outline: none;
 }
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: all .9s ease-in-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

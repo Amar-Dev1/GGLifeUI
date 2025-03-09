@@ -19,6 +19,7 @@ export { default as Step } from './components/Step';
 export { default as GGlink } from './components/GGlink';
 export { default as GoUp } from './components/GoUp';
 export { default as ThemeProvider } from './components/ThemeProvider';
+export { default as FadeIn } from './components/FadeIn';
 
 // Dashboard components
 export { default as Category } from './pages/Dashboard/layout/components/Category';

@@ -8,7 +8,7 @@ const Layout: React.FC = () => {
     return (
         <div id='dashboard' className={`min-h-screen flex transition-all ${theme}`}>
             <Sidebar isClicked={isSidebarOpen} setIsClicked={setIsSidebarOpen} />
-            <div className={`main-content px-2 py-2 grow ml-0 flex flex-col mr-auto lg:ml-[250px] ${theme==='dark'?'bg-[#232333]':''}`}>
+            <div className={`main-content px-3 py-2 grow ml-0 flex flex-col mr-auto lg:ml-[250px] ${theme==='dark'?'bg-[#232333]':''}`}>
                 <Dashbar isClicked={isSidebarOpen} setIsClicked={setIsSidebarOpen} />
                 <Content />
             </div>
