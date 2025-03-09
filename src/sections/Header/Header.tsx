@@ -40,12 +40,12 @@ const Header: React.FC = () => {
             <div className={`narrow-nav text-center flex flex-col justify-center fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[rgba(230,230,230,0.5)] shadow-lg shadow-gray-400 rounded-4xl w-4/5 h-7/10 z-[99] scale-0 transition-all duration-300 ${isClicked ? 'scale-100 opacity-100' : ''} `}>
                 <span className='cursor-pointer mb-3 text-xl absolute top-4 right-3' onClick={handleBar}>❌</span>
                 <a className='py-3 mt-6 text-black' onClick={handleBar} href="/">Home</a>
-                <div className='about-link mx-auto py-3 text-black group cursor-pointer relative'>
+                <div className='about-link mx-auto py-3 text-black group cursor-pointer relative' tabIndex={0}>
                     about
-                    <img src={arrowDown} alt="" className='w-2.5 absolute top-1/2 -right-4 -translate-y-1/2 group-hover:rotate-180 transition-all' />
-                    <div className='about-links w-56 bg-[rgba(230,230,230,.7)] backdrop-blur-lg rounded-2xl flex flex-col py-2 px-3 shadow absolute left-1/2 top-12 -translate-x-1/2 scale-0 group-hover:scale-100 transition-all duration-300'>
-                        <a href="#showcase" className='text-black my-1 hover:translate-x-4 transition-transform duration-300' onClick={handleBar}>Why GGLife ?</a><hr className='opacity-25' />
-                        <a href="#about" className='text-black my-1 hover:translate-x-4 transition-transform duration-300' onClick={handleBar}>About GGLife</a>
+                    <img src={arrowDown} alt="" className='w-2.5 absolute top-1/2 -right-4 -translate-y-1/2 group-focus:rotate-180 transition-all' />
+                    <div className='about-links w-56 bg-[rgba(230,230,230,.7)] backdrop-blur-lg rounded-2xl flex flex-col py-2 px-3 shadow absolute left-1/2 top-12 -translate-x-1/2 scale-0 group-focus:scale-100 transition-all duration-300'>
+                        <a href="#showcase" className='text-black my-1' onClick={handleBar}>Why GGLife ?</a><hr className='opacity-25' />
+                        <a href="#about" className='text-black my-1' onClick={handleBar}>About GGLife</a>
                     </div>
                 </div>
                 <a className='py-3 text-black mx-auto' onClick={handleBar} href="#how">How it works</a>
