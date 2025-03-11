@@ -5,9 +5,9 @@ import { MainTitle } from '../..';
 const Contact: React.FC = () => {
     return (
         <>
-            <div id='contact' className='bg-black text-white flex justify-center py-28'>
+            <div id='contact' className='bg-black text-white flex justify-center py-4 min-h-screen'>
                 <div className="container w-[95%] lg:w-[90%] flex flex-col justify-center items-center">
-                    <MainTitle head='Contact us' headClassname='text-4xl'/>
+                    <MainTitle head='Contact us' headClassname='text-4xl' />
                     <form action="" className="w-full lg:w-1/2 flex flex-col justify-center items-center my-3 z-10 ">
                         <div className="w-full flex flex-col lg:flex-row my-2 ">
                             <input type="text" name="name" id="" className='basis-full my-2 mr-0 lg:mr-1 rounded-lg px-5 py-2 bg-[aliceblue] text-black focus:scale-[1.02] transition-transform' placeholder='Your Name' />

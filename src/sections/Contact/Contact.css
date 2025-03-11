@@ -5,9 +5,8 @@
     background-position: 0 0;
     background-size: cover;
     background-attachment: fixed;
-    animation: moveBackground 25s linear infinite;
+    animation: moveBackground 15s linear infinite;
 }
-
 
 @keyframes moveBackground {
     from {
