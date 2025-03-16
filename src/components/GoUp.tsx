@@ -1,4 +1,4 @@
-import arrowUp from '../assets/arrow-up.png'
+import arrowUp from '../assets/arrow-up.png';
 interface GoUpProps {
     status: boolean;
     onclick: () => void;
