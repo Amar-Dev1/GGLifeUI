@@ -1,9 +1,8 @@
-import React, { use, useEffect, useState } from "react";
-import { DashCard, FadeIn, GGlink } from "../../../..";
+import React, { useEffect, useState } from "react";
+import { DashCard, GGlink } from "../../../..";
 import { Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Trophy } from "lucide-react";
-import { Link } from "react-router-dom";
 
 const MainContent: React.FC = () => {
   // chart
@@ -22,19 +21,22 @@ const MainContent: React.FC = () => {
     ],
   };
 
+
   const options = {
     responsive: true,
     plugins: {
       legend: {
-        position: "bottom",
+        position: "bottom" as const,
       },
       title: {
-        display: true,
+        display: true, 
         text: "Poll Results",
       },
     },
     cutout: "85%",
-    spacing: "2",
+    layout: {
+      padding: 10,
+    },
   };
 
   // status of the commitment rate
@@ -46,7 +48,7 @@ const MainContent: React.FC = () => {
 
   useEffect(() => {
     setIsAnimating(true);
-    const timeout = setTimeout(() => {
+    setTimeout(() => {
       setIsAnimating(false);
     }, 500);
   }, [highestScore]);
@@ -102,12 +104,13 @@ const MainContent: React.FC = () => {
                 </span>
               </div>
             </div>
-            {/* <Link to="#" className="absolute right-0 bottom-0 bg-">see details</Link> */}
             <GGlink takeTo={'#'} title="See details" className="absolute right-0 bottom-0 text-white m-0! p-1! rounded-tr-2xl hover:translate-y-0! "/>
           </DashCard>
         </div>
       </div>
-      <div className="grid grid-col-1 lg:grid-cols-12 gap-2 mt-2">
+      <div className="relative grid grid-col-1 lg:grid-cols-12 gap-2 mt-2">
+                <div className="overlay fixed bottom-0 right-0 w-full h-[20%] bg-[rgba(33, 33, 33, 0.5)] backdrop-blur-md z-[999] flex justify-center items-center"><h1 className='font-bold text-2xl animate-bounce'>still building ...</h1></div>
+
         <div className="lg:col-span-8">
           <DashCard
             cardTitle="Current progress"
@@ -121,6 +124,7 @@ const MainContent: React.FC = () => {
             some content
           </DashCard>
         </div>
+        
       </div>
     </div>
   );
