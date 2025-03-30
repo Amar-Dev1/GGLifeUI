@@ -47,7 +47,7 @@ const Dashbar: React.FC<DashbarProps> = ({ isClicked, setIsClicked }) => {
             </div>
             <div className='w-[45px] cursor-pointer ml-auto group' tabIndex={0}>
                 <img src={testImg} alt="" className='w-full rounded-full border-1 border-gray-300' loading='lazy' />
-                <div className={`w-[210px] h-auto px-3 flex flex-col justify-center rounded-2xl absolute top-18 right-6 shadow scale-0 group-focus:scale-100 transition-all duration-300 ${theme === 'dark' ? 'bg-[#2a2b3f] drop-shadow-2xl text-white' : 'bg-white'}`}>
+                <div className={`w-[210px] h-auto px-3 flex flex-col justify-center rounded-2xl absolute top-18 right-6 shadow scale-0 group-focus:scale-100 transition-all duration-300 z-[9999] ${theme === 'dark' ? 'bg-[#2a2b3f] drop-shadow-2xl text-white' : 'bg-white'}`}>
                     <div className="flex items-center p-3 mb-1">
                         <div className="w-[45px] mr-3 flex justify-center items-center">
                             <img src={testImg} alt="" loading='lazy' className='w-full rounded-full border-1 border-gray-300' />
