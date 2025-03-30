@@ -41,12 +41,14 @@ const MainContent: React.FC = () => {
 
   // status of the commitment rate
   type status = "good" | "bad";
-  const [rate, setRate] = useState<status | null>("good");
-  const [highestScore, setHighestScore] = useState<number | null>(75);
+  const [rate, setRate] = useState<status | null>(null);
+  const [highestScore, setHighestScore] = useState<number | null>(null);
 
   const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
+    setRate('good');
+    setHighestScore(75);
     setIsAnimating(true);
     setTimeout(() => {
       setIsAnimating(false);

@@ -4,7 +4,6 @@ import {
   gglifeLogo,
   taskImg,
   notImg,
-  notesImg,
   habbitsImg,
   logoutImg,
   tasksImg,
@@ -100,40 +99,7 @@ const Sidebar: React.FC<SidebarProps> = ({
           activeItem={activeItem}
           setActiveItem={setActiveItem}
         />
-        {/* <Category
-                    catTitle='Tasks'
-                    items={[
-                        {
-                            title: 'All Tasks',
-                            icon: tasksImg,
-                            onClick: () => setIsClicked(false)
-                        },
-                        {
-                            title: 'Create a Task',
-                            icon: taskImg,
-                            onClick: () => setIsClicked(false)
-                        }
-                    ]
-                    }
-                    activeItem={activeItem} setActiveItem={setActiveItem}
-                /> */}
-        {/* <Category
-                    catTitle='Notes'
-                    items={[
-                        {
-                            title: 'My Notes',
-                            icon: notesImg,
-                            onClick: () => setIsClicked(false)
-                        },
-                        {
-                            title: 'Create a Note',
-                            icon: notImg,
-                            onClick: () => setIsClicked(false)
-                        }
-                    ]}
-                    activeItem={activeItem} setActiveItem={setActiveItem}
-                /> */}
-
+      
         <Category
           catTitle="Settings"
           items={[
