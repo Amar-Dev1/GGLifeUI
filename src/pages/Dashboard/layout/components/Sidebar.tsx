@@ -1,16 +1,12 @@
 import React, { useState } from "react";
 import {
   Category,
-  gglifeLogo,
-  taskImg,
-  notImg,
-  habbitsImg,
-  logoutImg,
-  tasksImg,
-  panelmg,
-  historyImg,
-} from "../../../../index";
+  gglifeLogo
+}
+
+from "../../../../index";
 import { useTheme } from "../../../../components/ThemeProvider";
+import { SquareChartGantt, LayoutDashboard, ListTodo, Smile, Frown,CalendarSearch,User,Bell, LogOut} from "lucide-react";
 
 export interface SidebarProps {
   isClicked?: boolean;
@@ -52,9 +48,9 @@ const Sidebar: React.FC<SidebarProps> = ({
           items={[
             {
               title: "Dashboard",
-              icon: panelmg,
               onClick: () => setIsClicked(false),
               itemClass: "p-0 m-0 font-bold",
+              icon:<LayoutDashboard/>
             },
           ]}
           activeItem={activeItem}
@@ -65,13 +61,13 @@ const Sidebar: React.FC<SidebarProps> = ({
           items={[
             {
               title: "current plan",
-              icon: habbitsImg,
               onClick: () => setIsClicked(false),
+              icon:<SquareChartGantt/>
             },
             {
               title: "Create a plan",
-              icon: taskImg,
               onClick: () => setIsClicked(false),
+              icon:<ListTodo/>
             },
           ]}
           activeItem={activeItem}
@@ -82,18 +78,18 @@ const Sidebar: React.FC<SidebarProps> = ({
           items={[
             {
               title: "Successful weeks",
-              icon: habbitsImg,
               onClick: () => setIsClicked(false),
+              icon:<Smile/>,
             },
             {
               title: "Failed weeks",
-              icon: historyImg,
               onClick: () => setIsClicked(false),
+              icon:<Frown/>
             },
             {
               title: "All weeks",
-              icon: historyImg,
               onClick: () => setIsClicked(false),
+              icon:<CalendarSearch/>
             },
           ]}
           activeItem={activeItem}
@@ -105,13 +101,13 @@ const Sidebar: React.FC<SidebarProps> = ({
           items={[
             {
               title: "Profile",
-              icon: tasksImg,
               onClick: () => setIsClicked(false),
+              icon:<User/>
             },
             {
               title: "Notifications",
-              icon: notImg,
               onClick: () => setIsClicked(false),
+              icon:<Bell/>
             },
           ]}
           activeItem={activeItem}
@@ -122,13 +118,13 @@ const Sidebar: React.FC<SidebarProps> = ({
           items={[
             {
               title: "Logout",
-              icon: logoutImg,
               itemClass: "bg-red-500 font-bold text-white opacity-100",
               isActive: true,
               onClick: () => setIsClicked(false),
               titleStyle: { opacity: "1" },
               iconStyle: { opacity: "1", filter: "invert(100)" },
               route: "/logout",
+              icon:<LogOut/>
             },
           ]}
           activeItem={activeItem}
