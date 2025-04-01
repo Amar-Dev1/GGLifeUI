@@ -1,12 +1,10 @@
 import React, { ReactElement } from "react";
 import { Link } from "react-router-dom";
-import { useTheme } from "../../../../components/ThemeProvider";
+import { useTheme } from "../../../components/ThemeProvider";
 
 export interface ItemProps {
   title: string;
   route?: string;
-  iconWidth?: string;
-  iconHeight?: string;
   isActive?: boolean;
   onClick?: () => void;
   itemClass?: string;

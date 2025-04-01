@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { DashCard, GGlink } from "../../../..";
+import { DashCard, GGlink } from "../../..";
 import { Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Trophy, Target } from "lucide-react";
 
-const MainContent: React.FC = () => {
+const Home: React.FC = () => {
   // chart
   ChartJS.register(ArcElement, Tooltip, Legend);
   const data = {
@@ -58,38 +58,38 @@ const MainContent: React.FC = () => {
   }, [highestScore]);
 
   return (
-    <div id="content" className="content min-h-screen flex flex-col ">
+    <>
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-2">
         <div className="lg:col-span-8">
           <DashCard
             cardTitle="Commitment rate"
             cardClassName="average-rate-card relative"
           >
-            <div className="custom-legend flex flex-col justify-center gap-4 mb-4 absolute bottom-0">
-              <div className="flex items-center gap-2">
+            {/* custom legends */}
+            <div className="custom-legend flex flex-col justify-center gap-1 mb-4 absolute bottom-0">
+              <div className="flex items-center gap-1.5">
                 <span className="w-3 h-3 bg-[#ff6384] rounded-full"></span>
-                <span className="text-sm font-bold text-gray-500">
+                <span className="text-[9px] lg:text-lg font-bold text-gray-500">
                   Failed weeks
                 </span>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1.5">
                 <span className="w-3 h-3 bg-[#36a2eb] rounded-full"></span>
-                <span className="text-sm font-bold text-gray-500">
+                <span className="text-[9px] lg:text-lg font-bold text-gray-500">
                   Successful weeks
                 </span>
               </div>
             </div>
-
             <div className="statistics justify-items-center relative">
               <div
                 className={`status flex justify-center items-center absolute top-[47%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] rounded-full`}
               >
                 {rate === "good" ? (
-                  <span className="text-md lg:textlg text-green-500 font-bold">
-                    Your are good , keep going !
+                  <span className="text-sm lg:text-lg text-green-500 font-bold">
+                    you`r good , keep going !
                   </span>
                 ) : (
-                  <span className="text-sm lg:textlg text-red-500 font-bold">
+                  <span className="text-sm lg:text-lg text-red-500 font-bold">
                     you need to push more !
                   </span>
                 )}
@@ -98,7 +98,7 @@ const MainContent: React.FC = () => {
                 <Doughnut
                   data={data}
                   options={options}
-                  className="w-[300px]! h-[300px]!"
+                  className="w-[250px!] h-[250px]! lg:w-[300px]! lg:h-[300px]!"
                 />
               </div>
             </div>
@@ -175,7 +175,7 @@ const MainContent: React.FC = () => {
                   {history?.map((week, index) => (
                     <li
                       key={index}
-                      className="flex justify-between items-center py-5 px-1 border-b border-gray-300 gap-3"
+                      className="flex justify-between items-center py-5 px-1 border-b border-gray-600 gap-3"
                     >
                       <span className="text-xl lg:2xl font-bold">
                         Week {index + 1}
@@ -195,8 +195,8 @@ const MainContent: React.FC = () => {
           </DashCard>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
-export default MainContent;
+export default Home;

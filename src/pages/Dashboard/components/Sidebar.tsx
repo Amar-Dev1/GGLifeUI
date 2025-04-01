@@ -1,12 +1,17 @@
 import React, { useState } from "react";
+import { Category, gglifeLogo } from "../../../index";
+import { useTheme } from "../../../components/ThemeProvider";
 import {
-  Category,
-  gglifeLogo
-}
-
-from "../../../../index";
-import { useTheme } from "../../../../components/ThemeProvider";
-import { SquareChartGantt, LayoutDashboard, ListTodo, Smile, Frown,CalendarSearch,User,Bell, LogOut} from "lucide-react";
+  SquareChartGantt,
+  LayoutDashboard,
+  ListTodo,
+  Smile,
+  Frown,
+  CalendarSearch,
+  User,
+  Bell,
+  LogOut,
+} from "lucide-react";
 
 export interface SidebarProps {
   isClicked?: boolean;
@@ -50,7 +55,8 @@ const Sidebar: React.FC<SidebarProps> = ({
               title: "Dashboard",
               onClick: () => setIsClicked(false),
               itemClass: "p-0 m-0 font-bold",
-              icon:<LayoutDashboard/>
+              icon: <LayoutDashboard />,
+              route: "/dashboard",
             },
           ]}
           activeItem={activeItem}
@@ -60,14 +66,16 @@ const Sidebar: React.FC<SidebarProps> = ({
           catTitle="Week planning"
           items={[
             {
-              title: "current plan",
+              title: "Current plan",
               onClick: () => setIsClicked(false),
-              icon:<SquareChartGantt/>
+              icon: <SquareChartGantt />,
+              route: "/dashboard/currentplan",
             },
             {
               title: "Create a plan",
               onClick: () => setIsClicked(false),
-              icon:<ListTodo/>
+              icon: <ListTodo />,
+              route: "/dashboard/createplan",
             },
           ]}
           activeItem={activeItem}
@@ -79,35 +87,40 @@ const Sidebar: React.FC<SidebarProps> = ({
             {
               title: "Successful weeks",
               onClick: () => setIsClicked(false),
-              icon:<Smile/>,
+              icon: <Smile />,
+              route: "/dashboard/successfulweeks",
             },
             {
               title: "Failed weeks",
               onClick: () => setIsClicked(false),
-              icon:<Frown/>
+              icon: <Frown />,
+              route: "/dashboard/faildweeks",
             },
             {
               title: "All weeks",
               onClick: () => setIsClicked(false),
-              icon:<CalendarSearch/>
+              icon: <CalendarSearch />,
+              route: "/dashboard/allweeks",
             },
           ]}
           activeItem={activeItem}
           setActiveItem={setActiveItem}
         />
-      
+
         <Category
           catTitle="Settings"
           items={[
             {
               title: "Profile",
               onClick: () => setIsClicked(false),
-              icon:<User/>
+              icon: <User />,
+              route: "/dashboard/profile",
             },
             {
               title: "Notifications",
               onClick: () => setIsClicked(false),
-              icon:<Bell/>
+              icon: <Bell />,
+              route: "/dashboard/notifications",
             },
           ]}
           activeItem={activeItem}
@@ -124,7 +137,7 @@ const Sidebar: React.FC<SidebarProps> = ({
               titleStyle: { opacity: "1" },
               iconStyle: { opacity: "1", filter: "invert(100)" },
               route: "/logout",
-              icon:<LogOut/>
+              icon: <LogOut />,
             },
           ]}
           activeItem={activeItem}
