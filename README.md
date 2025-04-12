@@ -1,1 +1,1 @@
-The UI for GGLife project ⚡
+The UI of GGLife ⚡
