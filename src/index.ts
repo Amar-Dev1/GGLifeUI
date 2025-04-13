@@ -2,6 +2,7 @@
 export { default as HomePage } from "./pages/HomePage/HomePage";
 export { default as Dashboard } from "./pages/Dashboard/Dashboard";
 export { default as Signup } from "./pages/Signup/Signup";
+export { default as Verification } from "./pages/Verification/Verification";
 export { default as Login } from "./pages/Login/Login";
 export { default as Logout } from "./pages/Logout/Logout";
 // sections

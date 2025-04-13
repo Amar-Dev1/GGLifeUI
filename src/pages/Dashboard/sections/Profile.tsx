@@ -1,53 +1,109 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTheme } from "../../../components/ThemeProvider";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Profile: React.FC = () => {
-  const [isEditing, setIsEditing] = useState(false);
-  const [user, setUser] = useState({
-    name: "John Doe",
-    email: "johndoe@example.com",
-    profilePicture: "https://via.placeholder.com/150",
-  });
+  const navigate = useNavigate();
+  const token = localStorage.getItem("token");
+  if (!token) {
+    navigate("/login");
+    return null;
+  }
 
-  const [editedUser, setEditedUser] = useState(user);
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  const [isEditing, setIsEditing] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [user, setUser] = useState({
+    name: "",
+    bio: "",
+    photo: "",
+  });
 
   const handleEditToggle = () => {
     setIsEditing(!isEditing);
-    setEditedUser(user); // Reset edited fields when toggling
   };
 
-  const handleSave = () => {
-    setUser(editedUser);
-    setIsEditing(false);
+  const handleSave = async () => {
+    setIsLoading(true);
+    try {
+      const response = await axios.put(
+        `${import.meta.env.VITE_BACKEND_URL}/profiles/me`,
+        user,
+        config
+      );
+      if (response.data) {
+        setUser(response.data); // Update the user data with the response
+        setIsEditing(false); // Exit editing mode
+      }
+    } catch (err) {
+      console.error("Error updating profile:", err);
+      alert("Failed to update profile. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setEditedUser({ ...editedUser, [name]: value });
+    setUser({ ...user, [name]: value });
   };
 
-  const {theme} = useTheme()
-const navigate = useNavigate()
+  const { theme } = useTheme();
+
+  useEffect(() => {
+    const fetchProfileData = async () => {
+      try {
+        const response = await axios.get(
+          `${import.meta.env.VITE_BACKEND_URL}/profiles/me`,
+          config
+        );
+        if (response.data) {
+          setUser({
+            name: response.data.name,
+            photo: response.data.photo,
+            bio: response.data.bio,
+          }); // Load user data from the database
+        }
+      } catch (err) {
+        console.error("Error fetching profile data:", err);
+        alert("Failed to load profile data.");
+      }
+    };
+
+    fetchProfileData();
+  }, []);
+
   return (
-    <div className={`p-6 space-y-6 ${theme === 'light'?'text-black':'text-white'}`}>
+    <div
+      className={`p-6 space-y-6 ${
+        theme === "light" ? "text-black" : "text-white"
+      }`}
+    >
       <h2 className="text-2xl font-bold">👤 Your Profile</h2>
 
       {/* Profile Picture */}
       <div className="flex items-center space-x-4">
         <img
-          src={user.profilePicture}
+          src={user.photo || "https://via.placeholder.com/150"}
           alt="Profile"
           className="w-24 h-24 rounded-full border"
         />
         {isEditing && (
           <input
             type="text"
-            name="profilePicture"
-            value={editedUser.profilePicture}
+            name="photo"
+            value={user.photo}
             onChange={handleChange}
             placeholder="Profile Picture URL"
-            className="p-2 border! rounded-md flex-grow"
+            className="p-2 border rounded-md flex-grow"
           />
         )}
       </div>
@@ -55,31 +111,32 @@ const navigate = useNavigate()
       {/* User Information */}
       <div className="space-y-4">
         <div>
-          <label className="block text-sm font-medium">Name</label>
+          <label className="block text-sm font-medium">Name:</label>
           {isEditing ? (
             <input
               type="text"
               name="name"
-              value={editedUser.name}
+              value={user.name}
               onChange={handleChange}
-              className="p-2 border! rounded-md w-full"
+              className="p-2 border rounded-md w-full"
             />
           ) : (
             <p className="text-lg">{user.name}</p>
           )}
         </div>
+
         <div>
-          <label className="block text-sm font-medium">Email</label>
+          <label className="block text-sm font-medium">Bio:</label>
           {isEditing ? (
-            <input
-              type="email"
-              name="email"
-              value={editedUser.email}
+            <textarea
+              name="bio"
+              value={user.bio}
               onChange={handleChange}
               className="p-2 border rounded-md w-full"
+              rows={4}
             />
           ) : (
-            <p className="text-lg">{user.email}</p>
+            <p className="text-lg">{user.bio}</p>
           )}
         </div>
       </div>
@@ -90,13 +147,18 @@ const navigate = useNavigate()
           <>
             <button
               onClick={handleSave}
-              className="px-4 py-2 cursor-pointer bg-green-500 text-white rounded-md hover:bg-green-600"
+              disabled={isLoading}
+              className={`px-4 py-2 ${
+                isLoading
+                  ? "bg-gray-400 cursor-not-allowed"
+                  : "bg-green-500 hover:bg-green-600"
+              } text-white rounded-md`}
             >
-              Save
+              {isLoading ? "Saving..." : "Save"}
             </button>
             <button
               onClick={handleEditToggle}
-              className="px-4 py-2 bg-red-500 text-white rounded-xl hover:bg-red-600"
+              className="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600"
             >
               Cancel
             </button>
@@ -104,21 +166,11 @@ const navigate = useNavigate()
         ) : (
           <button
             onClick={handleEditToggle}
-            className="px-4 py-2 cursor-pointer bg-blue-500 text-white rounded-xl hover:bg-blue-600"
+            className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
           >
             Edit Profile
           </button>
         )}
-      </div>
-
-      {/* Logout Button */}
-      <div className="mt-6">
-        <button
-          onClick={() => navigate('/logout')}
-          className="px-4 py-2 cursor-pointer bg-gray-500 text-white rounded-xl hover:bg-gray-600"
-        >
-          Logout
-        </button>
       </div>
     </div>
   );
