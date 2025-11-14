@@ -26,7 +26,7 @@ function App() {
         <BrowserRouter>
         <Routes>
   {/* Protected Routes */}
-  {auth ? (
+  {/* {auth ? ( */}
     <Route path="/dashboard" element={<Dashboard />}>
       <Route index element={<Home />} />
       <Route path="currentplan" element={<CurrentPlan />} />
@@ -37,9 +37,9 @@ function App() {
       <Route path="profile" element={<Profile />} />
       <Route path="notifications" element={<Notifications />} />
     </Route>
-  ) : (
+  {/* ) : ( */}
     <Route path="/dashboard/*" element={<Navigate to="/login" replace />} />
-  )}
+  {/* )} */}
 
   {/* Public Routes */}
   <Route path="/" element={auth ? <Navigate to="/dashboard" replace /> : <HomePage />} />

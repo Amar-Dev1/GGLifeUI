@@ -8,6 +8,7 @@ import {
   gglifeLogo,
 } from "../..";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 interface UserData {
   email: string;
@@ -34,35 +35,35 @@ const Login: React.FC = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const sendData = async (e: FormEvent) => {
-    e.preventDefault();
+  // const sendData = async (e: FormEvent) => {
+  //   e.preventDefault();
 
-    try {
-      setLoading(true);
-      const response = await axios.post(
-        `${import.meta.env.VITE_BACKEND_URL}/auth/login`,
-        {
-          email: data.email,
-          password: data.password,
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      console.log(response.data);
+  //   try {
+  //     setLoading(true);
+  //     const response = await axios.post(
+  //       `${import.meta.env.VITE_BACKEND_URL}/auth/login`,
+  //       {
+  //         email: data.email,
+  //         password: data.password,
+  //       },
+  //       {
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //         },
+  //       }
+  //     );
+  //     console.log(response.data);
 
-      const token = response.data.token;
-      localStorage.setItem("token", token);
+  //     const token = response.data.token;
+  //     localStorage.setItem("token", token);
 
-      window.location.href = "/dashboard";
-    } catch (err) {
-      console.log(err);
-    } finally {
-      setLoading(false);
-    }
-  };
+  //     window.location.href = "/dashboard";
+  //   } catch (err) {
+  //     console.log(err);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
   return (
     <>
@@ -87,7 +88,7 @@ const Login: React.FC = () => {
             action=""
             method="POST"
             className="w-[80%] py-2"
-            onSubmit={sendData}
+            // onSubmit={sendData}
           >
             <div className="my-4">
               <label htmlFor="email" className="mb-1 flex">
@@ -137,9 +138,11 @@ const Login: React.FC = () => {
             <a href="#" className="text-sm block my-2">
               Forget your password ?
             </a>
-            <button className="bg-black text-white w-full rounded-2xl p-2 my-3 hover:-translate-y-1 transition-all cursor-pointer">
-              Login →
-            </button>
+            <Link to="/dashboard">
+              <button className="bg-black text-white w-full rounded-2xl p-2 my-3 hover:-translate-y-1 transition-all cursor-pointer">
+                Login →
+              </button>
+            </Link>
             <a href="/signup">
               Don`t have an account?{" "}
               <span className="text-blue-500">Register</span>
