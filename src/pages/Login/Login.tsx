@@ -1,4 +1,9 @@
-import React, { FormEvent, useEffect, useRef, useState } from "react";
+import React, {
+  // FormEvent,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import {
   Contact,
   emailImg,
@@ -7,7 +12,7 @@ import {
   eyeSlashImg,
   gglifeLogo,
 } from "../..";
-import axios from "axios";
+// import axios from "axios";
 import { Link } from "react-router-dom";
 
 interface UserData {
@@ -17,7 +22,7 @@ interface UserData {
 
 const Login: React.FC = () => {
   const [visible, setVisible] = useState<boolean>(false);
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
   const passwordInputRef = useRef<HTMLInputElement>(null);
 
   const [data, setData] = useState<UserData>({
@@ -71,14 +76,14 @@ const Login: React.FC = () => {
         id="login"
         className="min-h-screen flex flex-col justify-center items-center p-5 shadow"
       >
-        {loading && (
+        {/* {loading && (
           <>
             <div className="fixed top-0 left-0 w-full h-full bg-[rgba(33, 33, 33, 0.5)] backdrop-blur-md z-[998]"></div>
             <div className="fixed inset-0 w-full h-full flex items-center justify-center bg-[rgba(255,255,255,0.7)] z-[999] font-bold">
               loading...
             </div>
           </>
-        )}
+        )} */}
         <div className="relative min-w-[75vw] min-h-[75vh] bg-[#f8f9fa] flex flex-col justify-center items-center p-3 rounded-2xl shadow">
           <div className="brand flex justify-center items-center my-2">
             <img src={gglifeLogo} alt="⚡" loading="lazy" className="w-6" />
